@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/summary" element={<Summary />} />
-        <Route path="/summary" element={<checkout />} />
+        <Route path="/checkout" element={<checkout />} />
       </Routes>
     </Router>
   );
