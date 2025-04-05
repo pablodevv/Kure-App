@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Star } from 'lucide-react';
+import { Brain, Star, Lock } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 import QuizProgress from '../components/QuizProgress';
 import QuizOption from '../components/QuizOption';
@@ -423,7 +423,6 @@ const questions = [
     ]
   }
 ];
-
 
 export default function Quiz() {
   const navigate = useNavigate();
