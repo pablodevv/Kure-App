@@ -11,6 +11,18 @@ export default function Home() {
     navigate('/quiz');
   };
 
+
+  const defaultLocale = 'pt-BR';
+let currentLocale: string = localStorage.getItem('locale') || defaultLocale;
+
+// Função para alterar o idioma
+function setLocale(newLocale: string): void {
+  currentLocale = newLocale;
+  localStorage.setItem('locale', newLocale);
+  // Aqui você pode disparar um evento ou recarregar componentes que dependem do idioma
+  console.log(`Idioma alterado para: ${currentLocale}`);
+}
+
   return (
     <div className="min-h-screen bg-[#0A061E] text-white flex flex-col items-center">
       <div className="w-full max-w-4xl px-4 py-8">
