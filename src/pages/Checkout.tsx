@@ -1,26 +1,22 @@
-import { useState, useEffect } from 'react'
-import { CheckCircle, Gift, Shield, Star, X, HelpCircle, Activity, Smile, Frown, ChevronDown, ChevronUp } from 'lucide-react'
-import { Button } from 'button'
-export default function Checkout() {
-  return (
-    
-        {
+import { useState, useEffect } from 'react';
+import { CheckCircle, Gift, Shield, Star, X, HelpCircle, Activity, Smile, Frown, ChevronDown, ChevronUp } from 'lucide-react';
+import { Button } from '../components/Button';
 
 interface Plan {
-  id: '7-day' | '1-month' | '3-month'
-  title: string
-  price: number
-  originalPrice: number
-  pricePerDay: number
-  originalPricePerDay: number
-  popular?: boolean
-  hasGift?: boolean
+  id: '7-day' | '1-month' | '3-month';
+  title: string;
+  price: number;
+  originalPrice: number;
+  pricePerDay: number;
+  originalPricePerDay: number;
+  popular?: boolean;
+  hasGift?: boolean;
 }
 
 interface FAQItem {
-  question: string
-  answer: string
-  isOpen: boolean
+  question: string;
+  answer: string;
+  isOpen: boolean;
 }
 
 const plans: Plan[] = [
@@ -50,7 +46,7 @@ const plans: Plan[] = [
     originalPricePerDay: 0.63,
     hasGift: true
   }
-]
+];
 
 const features = [
   'App digital criado por especialistas em hipnose, neurociência e vício em comida',
@@ -60,7 +56,7 @@ const features = [
   'Suporte ao cliente 24/7',
   'Garantia de privacidade e segurança',
   'Acompanhamento do progresso'
-]
+];
 
 const reviews = [
   {
@@ -84,7 +80,7 @@ const reviews = [
     image: 'https://placehold.co/400x600',
     stars: 5
   }
-]
+];
 
 const comparisonItems = [
   {
@@ -117,11 +113,11 @@ const comparisonItems = [
     kure: { icon: Smile, text: 'Baseado no prazer', color: 'text-green-400' },
     alternative: { icon: Frown, text: 'Baseado no sofrimento', color: 'text-gray-500' }
   }
-]
+];
 
-export function Checkout() {
-  const [selectedPlan, setSelectedPlan] = useState<Plan['id']>('1-month')
-  const [timeLeft, setTimeLeft] = useState({ minutes: 15, seconds: 0 })
+export default function Checkout() {
+  const [selectedPlan, setSelectedPlan] = useState<Plan['id']>('1-month');
+  const [timeLeft, setTimeLeft] = useState({ minutes: 15, seconds: 0 });
   const [faqItems, setFaqItems] = useState<FAQItem[]>([
     {
       question: 'O que acontece depois que eu faço o pedido?',
@@ -143,49 +139,49 @@ export function Checkout() {
       answer: 'É perfeitamente normal e seguro adormecer durante uma sessão de hipnose. Na verdade, isso prova que você entrou em uma fase de relaxamento profundo onde a hipnose é mais eficaz. Se isso acontecer com você e quiser revisitar sua sessão noturna, você pode fazer isso selecionando o dia anterior no app Kure.',
       isOpen: false
     }
-  ])
+  ]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
         if (prev.seconds === 0) {
           if (prev.minutes === 0) {
-            clearInterval(timer)
-            return prev
+            clearInterval(timer);
+            return prev;
           }
-          return { minutes: prev.minutes - 1, seconds: 59 }
+          return { minutes: prev.minutes - 1, seconds: 59 };
         }
-        return { ...prev, seconds: prev.seconds - 1 }
-      })
-    }, 1000)
+        return { ...prev, seconds: prev.seconds - 1 };
+      });
+    }, 1000);
 
-    return () => clearInterval(timer)
-  }, [])
+    return () => clearInterval(timer);
+  }, []);
 
-  const formatTime = (num: number) => num.toString().padStart(2, '0')
+  const formatTime = (num: number) => num.toString().padStart(2, '0');
 
   const handleGetPlan = () => {
     const checkoutUrls = {
       '7-day': 'https://example.com/checkout/7-day',
       '1-month': 'https://example.com/checkout/1-month',
       '3-month': 'https://example.com/checkout/3-month'
-    }
-    window.location.href = checkoutUrls[selectedPlan]
-  }
+    };
+    window.location.href = checkoutUrls[selectedPlan];
+  };
 
   const toggleFAQ = (index: number) => {
     setFaqItems(prev => prev.map((item, i) => ({
       ...item,
       isOpen: i === index ? !item.isOpen : false
-    })))
-  }
+    })));
+  };
 
   const scrollToPlans = () => {
-    const plansSection = document.getElementById('plans-section')
+    const plansSection = document.getElementById('plans-section');
     if (plansSection) {
-      plansSection.scrollIntoView({ behavior: 'smooth' })
+      plansSection.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+  };
 
   const renderPlansSection = () => (
     <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto" id="plans-section">
@@ -300,7 +296,7 @@ export function Checkout() {
         </div>
       </div>
     </div>
-  )
+  );
 
   return (
     <div className="min-h-screen bg-[#0F0A3C] text-white">
@@ -494,8 +490,5 @@ export function Checkout() {
         </footer>
       </div>
     </div>
-  )
-}}
-    
   );
 }
