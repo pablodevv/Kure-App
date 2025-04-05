@@ -269,7 +269,6 @@ const questions = [
     title: 'Qual é seu peso desejado?',
     subtitle: 'Isso nos ajudará a personalizar um programa específico para você. Mais de 90% dos usuários Kure atingem seu peso desejado.',
     unit: 'kg',
-    validateFn: (value: number, weight: number) => value < weight,
     errorMessage: 'O peso desejado deve ser menor que seu peso atual'
   },
   {
