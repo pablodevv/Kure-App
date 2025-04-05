@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Brain } from 'lucide-react';
@@ -218,27 +218,27 @@ const questions = [
     title: 'Qual é seu nível atual de atividade física?',
     subtitle: 'Responda as últimas perguntas para ver quão rapidamente você pode atingir seus objetivos de peso.',
     options: [
-      { 
+      {
         label: 'Sedentário ou menor',
         subtitle: 'Trabalho no escritório e muito pouco ou nenhum exercício semanal.',
         emoji: '💺'
       },
-      { 
+      {
         label: 'Levemente ativo',
         subtitle: 'Trabalho no escritório e exercício uma vez por semana',
         emoji: '🚶'
       },
-      { 
+      {
         label: 'Moderadamente ativo',
         subtitle: 'Trabalho ativo ou exercício diário',
         emoji: '🏃'
       },
-      { 
+      {
         label: 'Muito ativo',
         subtitle: 'Trabalho ativo e/ou 1 hora de exercício diário',
         emoji: '🏋️'
       },
-      { 
+      {
         label: 'Extremamente ativo',
         subtitle: '3-5 treinos por semana',
         emoji: '💪'
