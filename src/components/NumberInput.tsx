@@ -11,6 +11,7 @@ interface NumberInputProps {
   min?: number;
   max?: number;
   errorMessage?: string;
+  validateFn?: (value: number) => boolean;
 }
 
 export default function NumberInput({
@@ -23,23 +24,61 @@ export default function NumberInput({
   min,
   max,
   errorMessage = 'Por favor, insira um valor válido',
+  validateFn,
 }: NumberInputProps) {
   const [error, setError] = useState('');
+  const [inputValue, setInputValue] = useState(value?.toString() || '');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.target.value;
+    
+    // Permite apenas números e um único ponto decimal
+    if (!/^\d*\.?\d*$/.test(newValue) && newValue !== '') {
+      return;
+    }
+
+    setInputValue(newValue);
+    setError('');
+
+    if (newValue === '') {
+      onChange(0);
+      return;
+    }
+
+    const numValue = parseFloat(newValue);
+    onChange(numValue);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!value) {
+    
+    if (!inputValue || inputValue === '') {
       setError(errorMessage);
       return;
     }
-    if (min !== undefined && value < min) {
+
+    const numValue = parseFloat(inputValue);
+
+    if (isNaN(numValue)) {
+      setError(errorMessage);
+      return;
+    }
+
+    if (min !== undefined && numValue < min) {
       setError(`O valor deve ser maior que ${min}`);
       return;
     }
-    if (max !== undefined && value > max) {
+
+    if (max !== undefined && numValue > max) {
       setError(`O valor deve ser menor que ${max}`);
       return;
     }
+
+    if (validateFn && !validateFn(numValue)) {
+      setError(errorMessage);
+      return;
+    }
+
     setError('');
     onNext();
   };
@@ -57,14 +96,12 @@ export default function NumberInput({
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="relative">
           <input
-            type="number"
-            value={value || ''}
-            onChange={(e) => {
-              setError('');
-              onChange(Number(e.target.value));
-            }}
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
             className="w-full p-4 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 
                      border border-gray-700 focus:border-purple-500 focus:outline-none"
+            placeholder={`Digite seu ${label.toLowerCase()}`}
           />
           <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
             {unit}
