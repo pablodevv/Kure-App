@@ -78,19 +78,19 @@ export default function Home() {
               <b style={{ marginBottom: '-20px' }}><p className="text-sm italic mb-4" style={{ marginBottom: '-20px' }}>
                 "71% mais peso perdido com hipnose"
               </p></b>
-              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_1.cff37dae.png&w=256&q=75" alt="MNT Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_1.cff37dae.png&w=256&q=75" alt="MNT Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30px' }} />
             </div>
             <div className="p-6 border border-gray-800 rounded-lg" style={{ marginBottom: '-20px' }}>
               <b style={{ marginBottom: '-20px' }}><p className="text-sm italic mb-4" style={{ marginBottom: '-20px' }}>
                 "A hipnoterapia oferece vantagem sobre outros métodos de perda de peso"
               </p></b>
-              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_2.61ead2ab.png&w=256&q=75" alt="Healthline Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_2.61ead2ab.png&w=256&q=75" alt="Healthline Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30px' }} />
             </div>
             <div className="p-6 border border-gray-800 rounded-lg" style={{ marginBottom: '-20px' }}>
               <b style={{ marginBottom: '-20px' }}><p className="text-sm italic mb-4" style={{ marginBottom: '-20px' }}>
                 "A hipnoterapia tem sido um segredo bem guardado para perda de peso"
               </p></b>
-              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_3.35cd9929.png&w=256&q=75" alt="Oprah Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_3.35cd9929.png&w=256&q=75" alt="Oprah Logo" className="h-8" style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: '30px' }} />
             </div>
           </div>
         </div>
