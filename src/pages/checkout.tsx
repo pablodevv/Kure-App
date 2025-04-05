@@ -161,12 +161,8 @@ export default function Checkout() {
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
   const handleGetPlan = () => {
-    const checkoutUrls = {
-      '7-day': 'https://example.com/checkout/7-day',
-      '1-month': 'https://example.com/checkout/1-month',
-      '3-month': 'https://example.com/checkout/3-month'
-    };
-    window.location.href = checkoutUrls[selectedPlan];
+    const selectedPlanPrice = plans.find(p => p.id === selectedPlan)?.price;
+    console.log(`Processing checkout for plan: ${selectedPlan} at $${selectedPlanPrice}`);
   };
 
   const toggleFAQ = (index: number) => {
