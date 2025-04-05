@@ -114,10 +114,12 @@ function EmailCollection({ onSubmit }: { onSubmit: (email: string) => void }) {
           <h1 className="text-3xl font-semibold mb-4">
             Seu programa está pronto.
           </h1>
+          <>
           <p className="text-gray-300">
-            Desbloqueie o acesso ao programa personalizado inserindo seu email.
+            Desbloqueie o acesso ao programa personalizado inserindo seu email.<br>
             Junte-se à comunidade Kure que atingiu seu peso ideal, com uma taxa de sucesso superior a 90%.
           </p>
+            </>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -230,7 +232,7 @@ const questions = [
       { label: 'Gravidez', emoji: '🤰' },
       { label: 'Relacionado ao estresse', emoji: '😰' },
       { label: 'Produtos farmacêuticos', emoji: '💊' },
-      { label: 'Outro', emoji: '➕' }
+      { label: 'Outro', emoji: '🤔' }
     ]
   },
   {
@@ -248,10 +250,10 @@ const questions = [
     title: 'Qual sintoma físico do excesso de peso mais te afeta?',
     options: [
       { label: 'Falta de ar', emoji: '😮‍💨' },
-      { label: 'Ronco', emoji: '😴' },
+      { label: 'Ronco', emoji: '😪' },
       { label: 'Mobilidade reduzida', emoji: '🚶' },
-      { label: 'Dor física', emoji: '🤕' },
-      { label: 'Não tenho certeza', emoji: '❓' }
+      { label: 'Dor física', emoji: '😳' },
+      { label: 'Não tenho certeza', emoji: '🤔' }
     ]
   },
   {
@@ -262,8 +264,8 @@ const questions = [
       { label: 'Tensão constante', emoji: '😣' },
       { label: 'Libido reduzida', emoji: '💔' },
       { label: 'Desafios em formar conexões românticas', emoji: '👥' },
-      { label: 'Dificuldades de socialização', emoji: '🤝' },
-      { label: 'Não tenho certeza', emoji: '❓' }
+      { label: 'Dificuldades de socialização', emoji: '👯‍♀️' },
+      { label: 'Não tenho certeza', emoji: '🤔' }
     ]
   },
   {
@@ -271,51 +273,51 @@ const questions = [
     id: 'transformation',
     title: 'A transformação do corpo começa na mente',
     content: (
-      <>
-        <p>Métodos tradicionais como dietas ou exercícios frequentemente falham em criar resultados duradouros. O aplicativo Kure identifica a causa raiz subconsciente do ganho de peso e a elimina. É a solução de perda de peso mais eficiente.</p>
-        <p className="mt-4">Complete o quiz e receba seu programa personalizado de hipnoterapia de 21 dias:</p>
-      </>
-    ),
-    image: "https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?w=800&q=80",
+  <>
+    <p>Métodos tradicionais como dietas ou exercícios frequentemente falham em criar resultados duradouros. O aplicativo Kure identifica a causa raiz subconsciente do ganho de peso e a elimina. <span style={{ color: '#c4afff' }}>É a solução de perda de peso mais eficiente.</span></p>
+    <p className="mt-4">Complete o quiz e receba seu programa personalizado de hipnoterapia de 21 dias:</p>
+  </>
+),
+    image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_2_main.53943ace.png&w=3840&q=75",
     showRating: true
   },
   {
     id: 'eating_habits',
     title: 'Com qual dos seguintes hábitos alimentares você mais se identifica?',
-    subtitle: 'A hipnose Kure focará na remoção deste hábito alimentar não saudável.',
+    subtitle: 'A hipnose Kure focará na remoção desse hábito alimentar não saudável.',
     options: [
       { label: 'Alimentação irregular', emoji: '⏰' },
       { label: 'Compulsão alimentar / beliscar constantemente', emoji: '🍪' },
       { label: 'Porções muito grandes de comida', emoji: '🍽️' },
       { label: 'Vício em açúcar', emoji: '🍫' },
       { label: 'Não sei cozinhar de forma saudável e saborosa', emoji: '👩‍🍳' },
-      { label: 'Outro', emoji: '➕' }
+      { label: 'Outro', emoji: '🤔' }
     ]
   },
   {
     id: 'food_craving',
     title: 'Qual desejo por comida você mais gostaria de parar?',
-    subtitle: 'A hipnose Kure focará no bloqueio deste desejo por comida.',
+    subtitle: 'A hipnose Kure focará no bloqueio desse desejo por comida.',
     options: [
       { label: 'Doces / chocolate', emoji: '🍫' },
       { label: 'Salgadinhos', emoji: '🥨' },
       { label: 'Produtos lácteos', emoji: '🧀' },
       { label: 'Fast food', emoji: '🍔' },
       { label: 'Bebidas açucaradas', emoji: '🥤' },
-      { label: 'Outro', emoji: '➕' }
+      { label: 'Outro', emoji: '🤔' }
     ]
   },
   {
     id: 'internal_belief',
     title: 'Qual crença interna mais te impede de perder peso?',
-    subtitle: 'A hipnose Kure vai te libertar desta limitação mental',
+    subtitle: 'A hipnose Kure vai te libertar dessa limitação mental',
     options: [
-      { label: 'Me falta força de vontade', emoji: '💪' },
+      { label: 'Me falta força de vontade', emoji: '😩' },
       { label: 'Sinto que DEVO limpar o prato', emoji: '🍽️' },
       { label: 'Qual o sentido? Se eu tentar, vou falhar', emoji: '😔' },
-      { label: 'Sempre fui assim', emoji: '🔄' },
-      { label: 'Sinto que não mereço melhorar', emoji: '💭' },
-      { label: 'Não tenho certeza', emoji: '❓' }
+      { label: 'Sempre fui assim', emoji: '🙄' },
+      { label: 'Sinto que não mereço melhorar', emoji: '😞' },
+      { label: 'Não tenho certeza', emoji: '🤔' }
     ]
   },
   {
@@ -323,7 +325,7 @@ const questions = [
     title: 'Você já ouviu falar sobre hipnose ajudando pessoas a mudarem seu comportamento?',
     options: [
       { label: 'Sim', emoji: '✅' },
-      { label: 'Não tenho certeza', emoji: '❓' }
+      { label: 'Não tenho certeza', emoji: '🤔' }
     ]
   },
   {
@@ -355,17 +357,17 @@ const questions = [
           Simplesmente abra o aplicativo Kure e ouça uma sessão relaxante de hipnose antes de dormir.
         </p>
         <p className="mt-4">
-          É quase como perder peso enquanto dorme.
+          <span style={{ color: '#c4afff' }}>É quase como perder peso enquanto dorme.</span>
         </p>
         <p className="mt-4">
           Estudos de pesquisa médica e dados de usuários Kure sugerem que a hipnose é perfeitamente segura e permite que você alcance melhores e duradouros resultados de perda de peso*.
         </p>
         <p className="mt-8 text-sm text-gray-400">
-          *Fonte: Journal of Integrative Medicine Volume 19, Issue 1, January 2021, Pages 1-5.
+          *Fonte: Journal of Integrative Medicine Volume 19, Issue 1, Janeiro de 2021, Páginas 1-5.
         </p>
       </>
     ),
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80"
+    image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_3_main_mobile.db09b2e6.png&w=1920&q=75"
   },
   {
     id: 'activity_level',
@@ -373,9 +375,9 @@ const questions = [
     subtitle: 'Responda as últimas perguntas para ver quão rapidamente você pode atingir seus objetivos de peso.',
     options: [
       {
-        label: 'Sedentário ou menor',
+        label: 'Sedentário ou menos',
         subtitle: 'Trabalho no escritório e muito pouco ou nenhum exercício semanal.',
-        emoji: '💺'
+        emoji: '😐'
       },
       {
         label: 'Levemente ativo',
@@ -385,17 +387,17 @@ const questions = [
       {
         label: 'Moderadamente ativo',
         subtitle: 'Trabalho ativo ou exercício diário',
-        emoji: '🏃'
+        emoji: '🧘‍♀️'
       },
       {
         label: 'Muito ativo',
         subtitle: 'Trabalho ativo e/ou 1 hora de exercício diário',
-        emoji: '🏋️'
+        emoji: '🏃'
       },
       {
         label: 'Extremamente ativo',
         subtitle: '3-5 treinos por semana',
-        emoji: '💪'
+        emoji: '🏋️'
       }
     ]
   },
@@ -438,12 +440,12 @@ const questions = [
   {
     id: 'reward',
     title: 'Imagine alcançar seu objetivo. Como você vai se recompensar?',
-    subtitle: 'Durante momentos desafiadores, lembre-se desta recompensa como motivação para continuar.',
+    subtitle: 'Durante momentos desafiadores, lembre-se dessa recompensa como motivação para continuar.',
     options: [
       { label: 'Vou fazer um dia de SPA', emoji: '💆' },
-      { label: 'Vou contribuir para caridade', emoji: '🤝' },
-      { label: 'Vou mudar de emprego ou fazer algo igualmente significativo', emoji: '💼' },
-      { label: 'Vou finalmente fazer aquela viagem linda que sempre sonhei', emoji: '✈️' }
+      { label: 'Vou contribuir para caridade', emoji: '💖' },
+      { label: 'Vou mudar de emprego ou fazer algo igualmente significativo', emoji: '✨' },
+      { label: 'Vou finalmente fazer aquela viagem linda que sempre sonhei', emoji: '🌴' }
     ]
   }
 ];
