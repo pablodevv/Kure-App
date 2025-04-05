@@ -295,14 +295,15 @@ const questions = [
   }
 ];
 
+
 export default function Quiz() {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showSuccess, setShowSuccess] = useState(false);
   const [processingAnswers, setProcessingAnswers] = useState(false);
+  
   const { 
     setAnswer, 
-    currentStep,
     setHeight,
     setWeight,
     setTargetWeight,
@@ -311,27 +312,28 @@ export default function Quiz() {
     setEmail 
   } = useQuizStore();
 
-  const handleAnswer = (answer: string) => {
+  const handleAnswer = useCallback((answer: string) => {
     const current = questions[currentQuestion];
     
     if (current.type === 'info') {
       setCurrentQuestion(prev => prev + 1);
-    } else {
-      setAnswer(current.id, answer);
-      
-      if (currentQuestion === questions.length - 1) {
-        setProcessingAnswers(true);
-        setTimeout(() => {
-          setProcessingAnswers(false);
-          navigate('/summary');
-        }, 3000);
-      } else {
-        setCurrentQuestion(prev => prev + 1);
-      }
+      return;
     }
-  };
 
-  const handleNumberInput = (value: number) => {
+    setAnswer(current.id, answer);
+    
+    if (currentQuestion === questions.length - 1) {
+      setProcessingAnswers(true);
+      setTimeout(() => {
+        setProcessingAnswers(false);
+        navigate('/summary');
+      }, 3000);
+    } else {
+      setCurrentQuestion(prev => prev + 1);
+    }
+  }, [currentQuestion, navigate, setAnswer]);
+
+  const handleNumberInput = useCallback((value: number) => {
     const current = questions[currentQuestion];
     switch (current.id) {
       case 'height':
@@ -347,21 +349,22 @@ export default function Quiz() {
         setAge(value);
         break;
     }
-  };
+  }, [currentQuestion, setHeight, setWeight, setTargetWeight, setAge]);
 
-  const handleBack = () => {
+  const handleBack = useCallback(() => {
     if (currentQuestion > 0) {
       setCurrentQuestion(prev => prev - 1);
     } else {
       navigate('/');
     }
-  };
+  }, [currentQuestion, navigate]);
 
-  const handleEmailSubmit = (email: string) => {
+  const handleEmailSubmit = useCallback((email: string) => {
     setEmail(email);
     setShowSuccess(true);
-  };
+  }, [setEmail]);
 
+  // Early returns
   if (showSuccess) {
     return <SuccessScreen />;
   }
@@ -403,6 +406,8 @@ export default function Quiz() {
   }
 
   if (currentQ.type === 'number') {
+    const value = useQuizStore((state: any) => state[currentQ.id]);
+    
     return (
       <div className="min-h-screen bg-[#0A061E] text-white">
         <div className="max-w-4xl mx-auto px-4 py-8">
@@ -410,13 +415,14 @@ export default function Quiz() {
           <NumberInput
             label={currentQ.title}
             subtitle={currentQ.subtitle}
-            value={useQuizStore((state: any) => state[currentQ.id])}
+            value={value}
             onChange={handleNumberInput}
             onNext={() => handleAnswer('')}
             unit={currentQ.unit}
             min={currentQ.min}
             max={currentQ.max}
             errorMessage={currentQ.errorMessage}
+            validateFn={currentQ.validateFn}
           />
         </div>
       </div>
@@ -447,11 +453,12 @@ export default function Quiz() {
             )}
 
             <div className="w-full max-w-2xl space-y-4">
-              {currentQ.options.map((option, index) => (
+              {currentQ.options?.map((option, index) => (
                 <QuizOption
                   key={index}
                   label={option.label}
                   emoji={option.emoji}
+                  subtitle={option.subtitle}
                   onClick={() => handleAnswer(option.label)}
                 />
               ))}
