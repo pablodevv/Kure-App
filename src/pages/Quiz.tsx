@@ -34,7 +34,7 @@ function LoadingScreen({ messages }: { messages: string[] }) {
             className="h-full bg-gradient-to-r from-purple-500 to-blue-500"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 10, ease: "linear" }}
+            transition={{ duration: 8, ease: "linear" }}
           />
         </div>
       </div>
@@ -133,7 +133,7 @@ function EmailCollection({ onSubmit }: { onSubmit: (email: string) => void }) {
             disabled={!email || !agreed}
             className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <Lock className="w-5 h-5" />
+            <LockOpen className="w-5 h-5" />
             <span>Desbloquear meu programa</span>
           </button>
         </form>
