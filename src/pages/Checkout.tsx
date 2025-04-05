@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { CheckCircle, Gift, Shield, Star, X, HelpCircle, Activity, Smile, Frown, ChevronDown, ChevronUp } from 'lucide-react'
-import { Button } from './ui/button'
+import { Button } from 'button'
 
 interface Plan {
   id: '7-day' | '1-month' | '3-month'
