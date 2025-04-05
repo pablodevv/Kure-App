@@ -187,7 +187,7 @@ const questions = [
     type: 'info',
     id: 'root_cause',
     image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_1_main.26296a6a.png&w=3840&q=75",
-    title: 'Desta vez, será diferente. Estamos mirando na causa raiz.',
+    title: 'Dessa vez, vai ser diferente. Estamos mirando na causa raiz.',
     content: (
   <>
     <p style={{ color: '#c4afff' }}>Já ouviu o ditado "Está tudo na sua cabeça?" ou "Seu intestino é seu segundo cérebro"?</p>
@@ -201,7 +201,7 @@ const questions = [
       Mais de 50.000 usuários começam o curso de auto-hipnose Kure todos os meses, reequilibrando com sucesso sua conexão intestino-cérebro eliminando padrões de pensamento negativos e superando obstáculos subconscientes.
     </p>
     <blockquote className="mt-6 border-l-4 border-purple-500 pl-4 italic">
-      "Fiquei chocada com a eficácia deste aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
+      "Fiquei chocada com a eficácia desse aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
     </blockquote>
     <p className="mt-8 text-sm text-gray-400">
           *Fonte: *Nutrients. Fevereiro de 2021; 13(2): 584.
