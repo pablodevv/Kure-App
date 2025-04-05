@@ -414,6 +414,20 @@ export default function Quiz() {
         <div className="max-w-4xl mx-auto px-4 py-8">
           <QuizProgress onBack={handleBack} />
           <NumberInput
+            key={currentQ.id === 'target_weight' ? `targetWeightInput-${currentQuestion}` : `numberInput-${currentQuestion}`}
+            label={currentQ.title}
+            subtitle={currentQ.subtitle}
+            value={currentValue}
+            onChange={handleNumberInput}
+            onNext={() => handleAnswer('')}
+            unit={currentQ.unit}
+            min={currentQ.min}
+            max={currentQ.max}
+            errorMessage={currentQ.errorMessage}
+            validateFn={currentQ.id === 'target_weight' ?
+              (value: number) => value < currentWeight :
+              undefined}
+            currentWeight={currentWeight}
             label={currentQ.title}
             subtitle={currentQ.subtitle}
             value={currentValue}
