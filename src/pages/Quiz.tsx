@@ -338,6 +338,8 @@ export default function Quiz() {
 
   const handleNumberInput = (value: number) => {
     const current = questions[currentQuestion];
+    if (isNaN(value)) return;
+    
     switch (current.id) {
       case 'height':
         setHeight(value);
