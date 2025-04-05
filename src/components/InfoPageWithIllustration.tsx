@@ -28,6 +28,14 @@ export default function InfoPageWithIllustration({
       exit={{ opacity: 0 }}
       className="flex flex-col md:flex-row items-center justify-between gap-12 max-w-6xl mx-auto p-8"
     >
+      <div className="flex-1">
+        <img
+          src={image}
+          alt=""
+          className="w-full max-w-md mx-auto rounded-lg shadow-xl mb-8 md:mb-0"
+        />
+      </div>
+
       <div className="flex-1 space-y-8">
         {showRating && (
           <div className="flex items-center gap-2">
@@ -52,19 +60,11 @@ export default function InfoPageWithIllustration({
 
         <button
           onClick={onContinue}
-          className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 
-                   hover:opacity-90 transition-opacity text-white font-medium"
+          className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500
+                           hover:opacity-90 transition-opacity text-white font-medium"
         >
           Entendi
         </button>
-      </div>
-
-      <div className="flex-1">
-        <img
-          src={image}
-          alt=""
-          className="w-full max-w-md mx-auto rounded-lg shadow-xl"
-        />
       </div>
     </motion.div>
   );
