@@ -1,5 +1,5 @@
+// src/components/EmailCollection.tsx
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Lock } from 'lucide-react';
 
 interface EmailCollectionProps {
@@ -8,68 +8,66 @@ interface EmailCollectionProps {
 
 export default function EmailCollection({ onSubmit }: EmailCollectionProps) {
   const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
+  const [agreed, setAgreed] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) {
-      setError('Por favor, insira seu email');
-      return;
+    if (email && agreed) {
+      onSubmit(email);
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('Por favor, insira um email válido');
-      return;
-    }
-    setError('');
-    onSubmit(email);
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="w-full max-w-md mx-auto text-center space-y-6"
-    >
-      <h2 className="text-3xl font-semibold mb-4">
-        Seu programa está pronto.
-      </h2>
-      <p className="text-gray-300 mb-8">
-        Desbloqueie acesso ao seu programa personalizado inserindo seu email.
-        Junte-se à comunidade Kure que atingiu seu peso ideal, com taxa de sucesso superior a 90%.
-      </p>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Seu email"
-            className="w-full p-4 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 
-                     border border-gray-700 focus:border-purple-500 focus:outline-none"
-          />
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+    <div className="min-h-screen bg-[#0A061E] text-white flex flex-col items-center justify-center p-4">
+      <div className="max-w-md w-full space-y-8">
+        <div className="text-center">
+          <h1 className="text-3xl font-semibold mb-4">
+            Seu programa está pronto.
+          </h1>
+          <p className="text-gray-300">
+            Desbloqueie o acesso ao programa personalizado inserindo seu email.
+            Junte-se à comunidade Kure que atingiu seu peso ideal, com uma taxa de sucesso superior a 90%.
+          </p>
         </div>
-        <button
-          type="submit"
-          className="w-full p-4 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 
-                   hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-        >
-          <Lock className="w-5 h-5" />
-          <span>Desbloquear meu programa</span>
-        </button>
-      </form>
 
-      <div className="mt-8 p-6 bg-gray-800/30 rounded-lg">
-        <div className="flex justify-center mb-4">
-          <div className="flex">
-            {'★'.repeat(4)}{'☆'.repeat(1)}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <input
+              type="email"
+              required
+              className="w-full px-4 py-3 rounded-lg bg-[#1A1130] border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-        </div>
-        <p className="italic text-gray-300">
-          "É a solução de perda de peso mais fácil que já experimentei. As sessões noturnas melhoraram muito a qualidade do meu sono e reduziram significativamente meu estresse."
-        </p>
+
+          <div className="flex items-start">
+            <input
+              type="checkbox"
+              className="h-4 w-4 mt-1 rounded border-gray-600 text-purple-500 focus:ring-purple-500 bg-[#1A1130]"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+            />
+            <label className="ml-2 text-sm text-gray-300">
+              Eu gostaria de receber um email sobre meu relatório de dados corporais e concordo com a{' '}
+              <a href="#" className="text-purple-400 hover:text-purple-300">
+                Política de Privacidade
+              </a>
+              .
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            disabled={!email || !agreed}
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <Lock className="w-5 h-5" />
+            <span>Desbloquear meu programa</span>
+          </button>
+        </form>
       </div>
-    </motion.div>
+    </div>
   );
 }
