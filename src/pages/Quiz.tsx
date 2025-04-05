@@ -203,6 +203,9 @@ const questions = [
     <blockquote className="mt-6 border-l-4 border-purple-500 pl-4 italic">
       "Fiquei chocada com a eficácia deste aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
     </blockquote>
+    <p className="mt-8 text-sm text-gray-400">
+          *Fonte: *Nutrients. Fevereiro de 2021; 13(2): 584.
+        </p>
   </>
 )
     
