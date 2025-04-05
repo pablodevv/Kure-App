@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/summary" element={<Summary />} />
+        <Route path="/summary" element={<checkout />} />
       </Routes>
     </Router>
   );
@@ -20,18 +21,6 @@ function App() {
 
 
 
-const router = createBrowserRouter([
-  {
-    path: '/checkout',
-    element: <Checkout />,
-  },
-]);
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-);
 
 
 export default App;
