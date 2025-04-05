@@ -186,6 +186,7 @@ const questions = [
   {
     type: 'info',
     id: 'root_cause',
+    image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_1_main.26296a6a.png&w=3840&q=75",
     title: 'Desta vez, será diferente. Estamos mirando na causa raiz.',
     content: (
       <>
@@ -203,8 +204,8 @@ const questions = [
           "Fiquei chocada com a eficácia deste aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
         </blockquote>
       </>
-    ),
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80"
+    )
+    
   },
   {
     id: 'referral',
