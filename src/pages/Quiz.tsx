@@ -189,22 +189,22 @@ const questions = [
     image: "https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finfo_1_main.26296a6a.png&w=3840&q=75",
     title: 'Desta vez, será diferente. Estamos mirando na causa raiz.',
     content: (
-      <>
-        <p>Já ouviu o ditado "Está tudo na sua cabeça?" ou "Seu intestino é seu segundo cérebro"?</p>
-        <p className="mt-4">
-          Comer por estresse, reações intestinais incomuns ou borboletas no estômago quando nervoso são todos sinais da conexão intestino-cérebro.
-        </p>
-        <p className="mt-4">
-          A mente subconsciente influenciando a má comunicação entre o intestino e o cérebro é o fator chave que causa o sobrepeso e faz más escolhas alimentares*.
-        </p>
-        <p className="mt-4">
-          Mais de 50.000 usuários começam o curso de auto-hipnose Kure todos os meses, reequilibrando com sucesso sua conexão intestino-cérebro eliminando padrões de pensamento negativos e superando obstáculos subconscientes.
-        </p>
-        <blockquote className="mt-6 border-l-4 border-purple-500 pl-4 italic">
-          "Fiquei chocada com a eficácia deste aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
-        </blockquote>
-      </>
-    )
+  <>
+    <p style={{ color: '#c4afff' }}>Já ouviu o ditado "Está tudo na sua cabeça?" ou "Seu intestino é seu segundo cérebro"?</p>
+    <p className="mt-4">
+      Comer por estresse, reações intestinais incomuns ou borboletas no estômago quando nervoso são todos sinais da conexão intestino-cérebro.
+    </p>
+    <p className="mt-4" style={{ color: '#c4afff' }}>
+      A mente subconsciente influenciando a má comunicação entre o intestino e o cérebro é o fator chave que causa o sobrepeso e faz más escolhas alimentares*.
+    </p>
+    <p className="mt-4">
+      Mais de 50.000 usuários começam o curso de auto-hipnose Kure todos os meses, reequilibrando com sucesso sua conexão intestino-cérebro eliminando padrões de pensamento negativos e superando obstáculos subconscientes.
+    </p>
+    <blockquote className="mt-6 border-l-4 border-purple-500 pl-4 italic">
+      "Fiquei chocada com a eficácia deste aplicativo de hipnose." - Elena, usando o app Kure desde 2024.
+    </blockquote>
+  </>
+)
     
   },
   {
