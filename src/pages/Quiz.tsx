@@ -423,7 +423,10 @@ export default function Quiz() {
             min={currentQ.min}
             max={currentQ.max}
             errorMessage={currentQ.errorMessage}
-            validateFn={currentQ.validateFn}
+            validateFn={currentQ.id === 'target_weight' ? 
+              (value: number) => value < currentWeight : 
+              undefined}
+            currentWeight={currentWeight}
           />
         </div>
       </div>
