@@ -67,34 +67,6 @@ export default function InfoPageWithIllustration({
           Entendi
         </button>
       </div>
-
-      {/* Adicionando a div com o botão e a barra de progresso */}
-      <div className="flex items-center gap-4 mb-12" style={{ marginBottom: '0' }}>
-        <button className="text-gray-400 hover:text-white transition-colors">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="lucide lucide-arrow-left w-6 h-6"
-          >
-            <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
-          </svg>
-        </button>
-        <div className="w-full bg-gray-800 h-1 rounded-full">
-          <div
-            className="h-full bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full transition-all duration-300"
-            style={{ width: '15%' }}
-          ></div>
-        </div>
-        <span className="text-gray-400 min-w-[4rem]">3 de 20</span>
-      </div>
     </motion.div>
   );
 }
