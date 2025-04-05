@@ -16,12 +16,12 @@ export default function InfoPage({ title, children, image, onContinue }: InfoPag
       exit={{ opacity: 0 }}
       className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto p-8"
     >
+      {image && (
+        <div className="flex-1">
+          <img src={image} alt="" className="w-full max-w-md mx-auto rounded-lg mb-6 md:mb-0" />
+        </div>
+      )}
       <div className="flex-1 space-y-6">
-        {image && (
-          <div className="mb-6"> {/* Adicionei uma margem inferior para separar da imagem */}
-            <img src={image} alt="" className="w-full max-w-md mx-auto rounded-lg" />
-          </div>
-        )}
         <h2 className="text-3xl font-semibold mb-6">{title}</h2>
         <div className="space-y-4 text-gray-300">
           {children}
