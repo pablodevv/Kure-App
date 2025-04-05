@@ -237,10 +237,10 @@ const questions = [
     id: 'struggle_duration',
     title: 'Há quanto tempo você está lutando com essa situação?',
     options: [
-      { label: '0-6 meses', emoji: '📅' },
-      { label: '6-12 meses', emoji: '📆' },
-      { label: '1-5 anos', emoji: '📈' },
-      { label: '5+ anos', emoji: '📊' }
+      { label: '0-6 meses', emoji: '😐' },
+      { label: '6-12 meses', emoji: '🙁' },
+      { label: '1-5 anos', emoji: '😪' },
+      { label: '5+ anos', emoji: '😭' }
     ]
   },
   {
