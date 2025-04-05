@@ -299,15 +299,15 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showSuccess, setShowSuccess] = useState(false);
   const [processingAnswers, setProcessingAnswers] = useState(false);
-  
-  const { 
-    setAnswer, 
+
+  const {
+    setAnswer,
     setHeight,
     setWeight,
     setTargetWeight,
     setAge,
     weight: currentWeight,
-    setEmail 
+    setEmail
   } = useQuizStore();
 
   const currentValue = useQuizStore((state: any) => {
@@ -317,14 +317,14 @@ export default function Quiz() {
 
   const handleAnswer = (answer: string) => {
     const current = questions[currentQuestion];
-    
+
     if (current.type === 'info') {
       setCurrentQuestion(prev => prev + 1);
       return;
     }
 
     setAnswer(current.id, answer);
-    
+
     if (currentQuestion === questions.length - 1) {
       setProcessingAnswers(true);
       setTimeout(() => {
@@ -414,19 +414,6 @@ export default function Quiz() {
           <QuizProgress onBack={handleBack} />
           <NumberInput
             key={currentQ.id === 'target_weight' ? `targetWeightInput-${currentQuestion}` : `numberInput-${currentQuestion}`}
-            label={currentQ.title}
-            subtitle={currentQ.subtitle}
-            value={currentValue}
-            onChange={handleNumberInput}
-            onNext={() => handleAnswer('')}
-            unit={currentQ.unit}
-            min={currentQ.min}
-            max={currentQ.max}
-            errorMessage={currentQ.errorMessage}
-            validateFn={currentQ.id === 'target_weight' ?
-              (value: number) => value < currentWeight :
-              undefined}
-            currentWeight={currentWeight}
             label={currentQ.title}
             subtitle={currentQ.subtitle}
             value={currentValue}
@@ -436,10 +423,7 @@ export default function Quiz() {
             min={currentQ.min}
             max={currentQ.max}
             errorMessage={currentQ.errorMessage}
-            validateFn={currentQ.id === 'target_weight' ? 
-              (value: number) => value < currentWeight : 
-              undefined}
-            currentWeight={currentWeight}
+            validateFn={currentQ.id === 'target_weight' ? (value: number) => value < currentWeight : undefined}
           />
         </div>
       </div>
@@ -450,7 +434,7 @@ export default function Quiz() {
     <div className="min-h-screen bg-[#0A061E] text-white">
       <div className="max-w-4xl mx-auto px-4 py-8">
         <QuizProgress onBack={handleBack} />
-        
+
         <AnimatePresence mode="wait">
           <motion.div
             key={currentQ.id}
@@ -462,7 +446,7 @@ export default function Quiz() {
             <h2 className="text-3xl font-semibold text-center">
               {currentQ.title}
             </h2>
-            
+
             {currentQ.subtitle && (
               <p className="text-gray-400 text-center max-w-2xl">
                 {currentQ.subtitle}
