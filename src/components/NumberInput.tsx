@@ -98,7 +98,7 @@ export default function NumberInput({
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="relative">
           <input
-            type="text"
+            type="number"
             value={inputValue}
             onChange={handleInputChange}
             className="w-full p-4 rounded-lg bg-gray-800/50 text-white placeholder-gray-400 
