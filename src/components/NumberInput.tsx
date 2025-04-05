@@ -46,7 +46,9 @@ export default function NumberInput({
     }
 
     const numValue = parseFloat(newValue);
-    onChange(numValue);
+    if (!isNaN(numValue)) {
+      onChange(numValue);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
