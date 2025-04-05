@@ -114,12 +114,12 @@ function EmailCollection({ onSubmit }: { onSubmit: (email: string) => void }) {
           <h1 className="text-3xl font-semibold mb-4">
             Seu programa está pronto.
           </h1>
-          <>
+          
           <p className="text-gray-300">
-            Desbloqueie o acesso ao programa personalizado inserindo seu email.<br>
+            Desbloqueie o acesso ao programa personalizado inserindo seu email.
             Junte-se à comunidade Kure que atingiu seu peso ideal, com uma taxa de sucesso superior a 90%.
           </p>
-            </>
+            
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
