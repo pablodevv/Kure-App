@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0A061E] text-white flex flex-col items-center">
       <div className="w-full max-w-4xl px-4 py-8">
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center" style="margin-top: -20px; margin-bottom: 10px;">
           <div className="flex items-center gap-2">
             <Brain className="w-8 h-8" />
             <span className="text-2xl font-semibold">kure</span>
@@ -23,54 +23,54 @@ export default function Home() {
 
         <div className="flex flex-col items-center text-center gap-8">
           <img
-            src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=800&q=80"
+            src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffacebook-hero-image.00bd0e16.png&w=1920&q=75"
             alt="Brain with headphones"
-            className="w-48 h-48 object-cover rounded-full mb-8"
+            className="w-50 h-50 object-cover mb-8" style="margin-bottom: 0;"
           />
 
-          <h1 className="text-4xl font-semibold mb-4">
+          <h1 className="text-4xl font-semibold mb-4" style="font-size: 35px; width: 350px; margin-bottom: 0;">
             Hipnose para Perda de Peso
           </h1>
-          <p className="text-gray-400 mb-8">
+          <b><p className="text-gray-400 mb-8" style="margin-bottom: 0; color: white;">
             De acordo com idade e gênero
-          </p>
+          </p></b>
 
           <div className="flex flex-col gap-4 w-full max-w-md">
-            <p className="text-lg mb-4">Comece selecionando seu gênero:</p>
+            <b><p className="text-lg mb-4" style="margin-bottom: 0;">Comece selecionando seu gênero:</p></b>
             <div className="grid grid-cols-2 gap-4">
               <button
                 onClick={() => handleGenderSelect('male')}
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:opacity-90 transition-opacity"
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:opacity-90 transition-opacity" style="height: 60px;"
               >
                 Masculino
               </button>
               <button
                 onClick={() => handleGenderSelect('female')}
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:opacity-90 transition-opacity"
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 hover:opacity-90 transition-opacity" style="height: 60px;"
               >
                 Feminino
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="p-6 border border-gray-800 rounded-lg">
-              <p className="text-sm italic mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" style="margin-top: 0;">
+            <div className="p-6 border border-gray-800 rounded-lg" style="margin-bottom: -20px;">
+              <b><p className="text-sm italic mb-4"></p>
                 "71% mais peso perdido com hipnose"
-              </p>
-              <img src="/mnt-logo.png" alt="MNT Logo" className="h-8" />
+              </p></b>
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_1.cff37dae.png&w=256&q=75" alt="MNT Logo" className="h-8" style="margin-left: auto; margin-right: auto;" />
             </div>
-            <div className="p-6 border border-gray-800 rounded-lg">
-              <p className="text-sm italic mb-4">
+            <div className="p-6 border border-gray-800 rounded-lg" style="margin-bottom: -20px;">
+              <b><p className="text-sm italic mb-4">
                 "A hipnoterapia oferece vantagem sobre outros métodos de perda de peso"
-              </p>
-              <img src="/healthline-logo.png" alt="Healthline Logo" className="h-8" />
+              </p></b>
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_2.61ead2ab.png&w=256&q=75" alt="Healthline Logo" className="h-8" style="margin-left: auto; margin-right: auto;" />
             </div>
-            <div className="p-6 border border-gray-800 rounded-lg">
-              <p className="text-sm italic mb-4">
+            <div className="p-6 border border-gray-800 rounded-lg" style="margin-bottom: -20px;">
+              <b><p className="text-sm italic mb-4">
                 "A hipnoterapia tem sido um segredo bem guardado para perda de peso"
-              </p>
-              <img src="/oprah-logo.png" alt="Oprah Logo" className="h-8" />
+              </p></b>
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_3.35cd9929.png&w=256&q=75" alt="Oprah Logo" className="h-8" style="margin-left: auto; margin-right: auto;" />
             </div>
           </div>
         </div>
