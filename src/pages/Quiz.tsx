@@ -295,7 +295,6 @@ const questions = [
   }
 ];
 
-
 export default function Quiz() {
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -311,6 +310,11 @@ export default function Quiz() {
     weight: currentWeight,
     setEmail 
   } = useQuizStore();
+
+  const currentValue = useQuizStore((state: any) => {
+    const current = questions[currentQuestion];
+    return current?.type === 'number' ? state[current.id] : null;
+  });
 
   const handleAnswer = (answer: string) => {
     const current = questions[currentQuestion];
@@ -364,7 +368,6 @@ export default function Quiz() {
     setShowSuccess(true);
   };
 
-  // Early returns
   if (showSuccess) {
     return <SuccessScreen />;
   }
@@ -413,7 +416,7 @@ export default function Quiz() {
           <NumberInput
             label={currentQ.title}
             subtitle={currentQ.subtitle}
-            value={useQuizStore((state: any) => state[currentQ.id])}
+            value={currentValue}
             onChange={handleNumberInput}
             onNext={() => handleAnswer('')}
             unit={currentQ.unit}
