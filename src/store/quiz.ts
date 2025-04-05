@@ -32,7 +32,7 @@ const initialState = {
   loading: false,
   height: null,
   weight: null,
-  targetWeight: null,
+  targetWeight: null, // Inicializado como null
   age: null,
   email: null,
 };
@@ -40,8 +40,8 @@ const initialState = {
 export const useQuizStore = create<QuizState>((set) => ({
   ...initialState,
   setGender: (gender) => set({ gender }),
-  setAnswer: (question, answer) => 
-    set((state) => ({ 
+  setAnswer: (question, answer) =>
+    set((state) => ({
       answers: { ...state.answers, [question]: answer },
       currentStep: state.currentStep + 1
     })),
@@ -50,7 +50,7 @@ export const useQuizStore = create<QuizState>((set) => ({
   setLoading: (loading) => set({ loading }),
   setHeight: (height) => set({ height }),
   setWeight: (weight) => set({ weight }),
-  setTargetWeight: (weight) => set({ targetWeight }),
+  setTargetWeight: (weight) => set({ targetWeight: weight }),
   setAge: (age) => set({ age }),
   setEmail: (email) => set({ email }),
   resetQuiz: () => set(initialState),
