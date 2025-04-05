@@ -55,7 +55,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" style="margin-top: 0;">
             <div className="p-6 border border-gray-800 rounded-lg" style="margin-bottom: -20px;">
-              <b><p className="text-sm italic mb-4"></p>
+              <b><p className="text-sm italic mb-4">
                 "71% mais peso perdido com hipnose"
               </p></b>
               <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_card_1.cff37dae.png&w=256&q=75" alt="MNT Logo" className="h-8" style="margin-left: auto; margin-right: auto;" />
