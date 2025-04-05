@@ -312,7 +312,7 @@ export default function Quiz() {
     setEmail 
   } = useQuizStore();
 
-  const handleAnswer = useCallback((answer: string) => {
+  const handleAnswer = (answer: string) => {
     const current = questions[currentQuestion];
     
     if (current.type === 'info') {
@@ -331,9 +331,9 @@ export default function Quiz() {
     } else {
       setCurrentQuestion(prev => prev + 1);
     }
-  }, [currentQuestion, navigate, setAnswer]);
+  };
 
-  const handleNumberInput = useCallback((value: number) => {
+  const handleNumberInput = (value: number) => {
     const current = questions[currentQuestion];
     switch (current.id) {
       case 'height':
@@ -349,20 +349,20 @@ export default function Quiz() {
         setAge(value);
         break;
     }
-  }, [currentQuestion, setHeight, setWeight, setTargetWeight, setAge]);
+  };
 
-  const handleBack = useCallback(() => {
+  const handleBack = () => {
     if (currentQuestion > 0) {
       setCurrentQuestion(prev => prev - 1);
     } else {
       navigate('/');
     }
-  }, [currentQuestion, navigate]);
+  };
 
-  const handleEmailSubmit = useCallback((email: string) => {
+  const handleEmailSubmit = (email: string) => {
     setEmail(email);
     setShowSuccess(true);
-  }, [setEmail]);
+  };
 
   // Early returns
   if (showSuccess) {
@@ -406,8 +406,6 @@ export default function Quiz() {
   }
 
   if (currentQ.type === 'number') {
-    const value = useQuizStore((state: any) => state[currentQ.id]);
-    
     return (
       <div className="min-h-screen bg-[#0A061E] text-white">
         <div className="max-w-4xl mx-auto px-4 py-8">
@@ -415,7 +413,7 @@ export default function Quiz() {
           <NumberInput
             label={currentQ.title}
             subtitle={currentQ.subtitle}
-            value={value}
+            value={useQuizStore((state: any) => state[currentQ.id])}
             onChange={handleNumberInput}
             onNext={() => handleAnswer('')}
             unit={currentQ.unit}
