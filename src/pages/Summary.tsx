@@ -63,7 +63,7 @@ const testimonials = [
     date: '2024 Jun 19',
     rating: 5,
     text: 'Experiência fenomenal. A hipnose do Kure desbloqueou uma nova versão de mim. Manter uma nutrição saudável agora é natural.',
-    author: 'Elizabeth D.',
+    author: 'Eliza D.',
     verified: true
   }
 ];
