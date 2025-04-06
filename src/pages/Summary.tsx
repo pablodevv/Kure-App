@@ -76,31 +76,8 @@ export default function Summary() {
 
   return (
     <div className="min-h-screen bg-[#0A061E] text-white">
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-        >
-          <div>
-            <h1 className="text-5xl font-bold mb-6">
-              Com base em suas respostas,<br />
-              você pode alcançar <span className="text-purple-400">85% do<br />
-              seu objetivo em 1 mês</span>
-            </h1>
-            <p className="text-gray-400 mb-8">
-              Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
-            </p>
-            <button
-              onClick={() => navigate('/checkout')}
-              className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              Começar agora
-            </button>
-          </div>
 
-          <div className="bg-[#1A1632] rounded-2xl p-6">
+    <div className="bg-[#1A1632] rounded-2xl p-6">
             <h3 className="text-xl font-semibold mb-4">Sua previsão de perda de peso com o Kure</h3>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
@@ -142,6 +119,33 @@ export default function Summary() {
           </div>
         </motion.div>
       </div>
+
+      
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
+          <div>
+            <h1 className="text-5xl font-bold mb-6">
+              Com base em suas respostas,<br />
+              você pode alcançar <span className="text-purple-400">85% do<br />
+              seu objetivo em 1 mês</span>
+            </h1>
+            <p className="text-gray-400 mb-8">
+              Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
+            </p>
+            <button
+              onClick={() => navigate('/checkout')}
+              className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
+            >
+              Começar agora
+            </button>
+          </div>
+
+          
 
       {/* Weekly Plan Section */}
       <div className="bg-[#1A1632] py-16">
