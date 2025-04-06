@@ -90,8 +90,8 @@ const comparisonItems = [
   },
   {
     label: 'Preço',
-    kure: { icon: CheckCircle, text: 'R$ 19.29 por mês*', color: 'text-green-400' },
-    alternative: { icon: X, text: 'R$ 55.00–150.00 por visita**', color: 'text-gray-500' }
+    kure: { icon: CheckCircle, text: 'R$ 19.29*', color: 'text-green-400' },
+    alternative: { icon: X, text: 'R$ 85.00–300.00 por consulta**', color: 'text-gray-500' }
   },
   {
     label: 'Foco na causa raiz',
@@ -131,8 +131,8 @@ useEffect(() => {
       isOpen: false
     },
     {
-      question: 'Como posso cancelar minha assinatura?',
-      answer: 'Os cancelamentos são tratados diretamente pela Apple e podem ser solicitados usando as instruções aqui. Se você ainda tiver dúvidas sobre como cancelar sua assinatura, entre em contato conosco em info@kureapp.health',
+      question: 'Como posso cancelar meu plano?',
+      answer: 'Os cancelamentos são tratados diretamente pela Apple e podem ser solicitados usando as instruções aqui. Se você ainda tiver dúvidas sobre como cancelar seu plano, entre em contato conosco em suporte@kureapp.com.br',
       isOpen: false
     },
     {
@@ -353,9 +353,9 @@ useEffect(() => {
             </div>
 
             <div className="mt-8 text-sm text-gray-400">
-              <p>*R$ 19.29 pelo primeiro mês de assinatura Kure.</p>
-              <p>**Preço médio de personal coach nos EUA R$ 55.00–65.00 por visita.</p>
-              <p className="ml-4">Preço médio de nutricionista R$ 70.00–150.00 por visita.</p>
+              
+              <p>**Preço médio de personal coach no Brasil R$ 85.00–200.00 por hora/aula.</p>
+              <p className="ml-4">Preço médio de nutricionista R$ 100.00–300.00 por consulta.</p>
             </div>
           </div>
 
@@ -377,7 +377,7 @@ useEffect(() => {
           </div>
 
           <h2 className="text-3xl mb-12 text-center">
-            Por que os <span className="text-purple-400">Kustomers</span> amam o app <span className="text-purple-400">Kure</span>
+            Por que os <span className="text-purple-400">Clientes</span> amam o app <span className="text-purple-400">Kure</span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -475,7 +475,7 @@ useEffect(() => {
 
         <footer className="mt-20 py-8 border-t border-gray-800">
           <div className="max-w-6xl mx-auto text-center">
-            <p className="text-gray-400">© 2024 Kure App. Todos os direitos reservados.</p>
+            <p className="text-gray-400">© 2025 Kure App. Todos os direitos reservados.</p>
           </div>
         </footer>
       </div>
