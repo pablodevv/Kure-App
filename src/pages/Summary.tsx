@@ -193,7 +193,7 @@ export default function Summary() {
                 <span className="text-sm">Outros apps de perda de peso</span>
               </div>
             </div>
-            <p className="text-gray-400 mt-4">com base nas suas respostas</p>
+            
           </div>
         </motion.div>
         
@@ -208,7 +208,7 @@ export default function Summary() {
 
           <div className="flex justify-center gap-12 mb-12">
             <div className="text-center">
-              <Scale className="w-8 h-8 mx-auto mb-2 text-purple-400" />
+              <WeightScale className="w-8 h-8 mx-auto mb-2 text-purple-400" />
               <p className="text-lg">Peso desejado - {targetWeight} kg</p>
             </div>
             <div className="text-center">
