@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-import { gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
+import { Gauge, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 
 const generateChartData = (startWeight: number, targetWeight: number) => {
@@ -208,7 +208,7 @@ export default function Summary() {
 
           <div className="flex justify-center gap-12 mb-12">
             <div className="text-center">
-              <gauge className="w-8 h-8 mx-auto mb-2 text-purple-400" />
+              <Gauge className="w-8 h-8 mx-auto mb-2 text-purple-400" />
               <p className="text-lg">Peso desejado - {targetWeight} kg</p>
             </div>
             <div className="text-center">
