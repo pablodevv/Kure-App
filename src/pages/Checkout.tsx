@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle, Gift, Shield, Star, X, HelpCircle, Activity, Smile, Frown, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '../components/Button';
+import { useRouter } from 'next/router'; 
 
 interface Plan {
   id: '7-day' | '1-month' | '3-month';
@@ -11,6 +12,7 @@ interface Plan {
   originalPricePerDay: number;
   popular?: boolean;
   hasGift?: boolean;
+  link: string; 
 }
 
 interface FAQItem {
@@ -26,7 +28,8 @@ const plans: Plan[] = [
     price: 7.59,
     originalPrice: 15.18,
     pricePerDay: 1.08,
-    originalPricePerDay: 2.16
+    originalPricePerDay: 2.16,
+    link: 'https://dashboard.render.com/web/srv-cvohe2p5pdvs739umg8g/deploys/dep-cvovl424d50c73bmg740',
   },
   {
     id: '1-month',
@@ -35,7 +38,8 @@ const plans: Plan[] = [
     originalPrice: 38.58,
     pricePerDay: 0.64,
     originalPricePerDay: 1.28,
-    popular: true
+    popular: true,
+    link: 'https://bolt.new/~/sb1-3a9sjk7u', 
   },
   {
     id: '3-month',
@@ -44,8 +48,9 @@ const plans: Plan[] = [
     originalPrice: 57.19,
     pricePerDay: 0.31,
     originalPricePerDay: 0.63,
-    hasGift: true
-  }
+    hasGift: true,
+    link: 'https://github.com/pablodevv/Kure-App/edit/master/src/pages/Checkout.tsx',
+  },
 ];
 
 const features = [
@@ -117,12 +122,13 @@ const comparisonItems = [
 
 export default function Checkout() {
 
-useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   const [selectedPlan, setSelectedPlan] = useState<Plan['id']>('1-month');
   const [selectedPlanBottom, setSelectedPlanBottom] = useState<Plan['id']>('1-month');
+  const [checkoutLink, setCheckoutLink] = useState(''); 
   const [timeLeft, setTimeLeft] = useState({ minutes: 15, seconds: 0 });
   const [faqItems, setFaqItems] = useState<FAQItem[]>([
     {
@@ -147,6 +153,24 @@ useEffect(() => {
     }
   ]);
 
+  const router = useRouter(); 
+
+  useEffect(() => {
+    
+    const plan = plans.find(p => p.id === selectedPlan);
+    if (plan) {
+      setCheckoutLink(plan.link);
+    }
+  }, [selectedPlan]);
+
+  useEffect(() => {
+    
+    const planBottom = plans.find(p => p.id === selectedPlanBottom);
+    if (planBottom) {
+      setCheckoutLink(planBottom.link);
+    }
+  }, [selectedPlanBottom]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -169,9 +193,13 @@ useEffect(() => {
 
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
-  const handleGetPlan = (planId: Plan['id']) => {
-    const selectedPlanPrice = plans.find(p => p.id === planId)?.price;
-    console.log(`Processing checkout for plan: ${planId} at $${selectedPlanPrice}`);
+  const handleGetPlan = () => {
+    if (checkoutLink) {
+      router.push(checkoutLink); 
+    } else {
+      console.error('Nenhum link de checkout definido para o plano selecionado.');
+      
+    }
   };
 
   const toggleFAQ = (index: number) => {
@@ -196,7 +224,15 @@ useEffect(() => {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              onClick={() => isBottom ? setSelectedPlanBottom(plan.id) : setSelectedPlan(plan.id)}
+              onClick={() => {
+                if (isBottom) {
+                  setSelectedPlanBottom(plan.id);
+                  setCheckoutLink(plan.link); 
+                } else {
+                  setSelectedPlan(plan.id);
+                  setCheckoutLink(plan.link); 
+                }
+              }}
               className={`bg-white rounded-xl p-6 relative cursor-pointer ${
                 (isBottom ? selectedPlanBottom : selectedPlan) === plan.id ? 'ring-2 ring-purple-500' : ''
               }`}
@@ -211,12 +247,20 @@ useEffect(() => {
                   <input
                     type="radio"
                     name={isBottom ? "plan-bottom" : "plan"}
-                    id={`${plan.id}${isBottom ? '-bottom' : ''}`}
+                    id={`<span class="math-inline">\{plan\.id\}</span>{isBottom ? '-bottom' : ''}`}
                     checked={(isBottom ? selectedPlanBottom : selectedPlan) === plan.id}
-                    onChange={() => isBottom ? setSelectedPlanBottom(plan.id) : setSelectedPlan(plan.id)}
+                    onChange={() => {
+                      if (isBottom) {
+                        setSelectedPlanBottom(plan.id);
+                        setCheckoutLink(plan.link); 
+                      } else {
+                        setSelectedPlan(plan.id);
+                        setCheckoutLink(plan.link); 
+                      }
+                    }}
                     className="mr-3 accent-purple-500"
                   />
-                  <label htmlFor={`${plan.id}${isBottom ? '-bottom' : ''}`}>{plan.title}</label>
+                  <label htmlFor={`<span class="math-inline">\{plan\.id\}</span>{isBottom ? '-bottom' : ''}`}>{plan.title}</label>
                   <div className="mt-1">
                     <span className="line-through text-gray-500">R$ {plan.originalPrice}</span>{' '}
                     <span className="font-bold">R$ {plan.price}</span>
@@ -246,7 +290,7 @@ useEffect(() => {
           variant="gradient"
           size="lg"
           className="w-full mt-6"
-          onClick={() => handleGetPlan(isBottom ? selectedPlanBottom : selectedPlan)}
+          onClick={handleGetPlan}
         >
           Obter meu plano
         </Button>
