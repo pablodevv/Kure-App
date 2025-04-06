@@ -60,24 +60,24 @@ const features = [
 
 const reviews = [
   {
-    name: 'Jasmine Z.',
+    name: 'Júlia R.',
     date: '2024 Jun 27',
     text: 'Kure mudou meu corpo de maneiras que eu não poderia imaginar. Recomendo para todas as garotas que procuram algo diferente que realmente funciona!',
-    image: 'https://placehold.co/400x600',
+    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_1.82f0a538.png&w=750&q=75',
     stars: 5
   },
   {
-    name: 'Joseph S.',
+    name: 'José S.',
     date: '2024 Jun 24',
     text: 'Finalmente parei de comer compulsivamente e comecei a me exercitar. Kure foi a única coisa que funcionou para mim.',
-    image: 'https://placehold.co/400x600',
+    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_2.309d2518.png&w=750&q=75',
     stars: 5
   },
   {
-    name: 'Simona K.',
+    name: 'Simone G.',
     date: '2024 Jun 19',
     text: 'Experiência fenomenal. O app Kure é a principal razão por trás da minha mudança. Ser saudável agora é tão fácil, vem naturalmente.',
-    image: 'https://placehold.co/400x600',
+    image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_3.6d5340ab.png&w=750&q=75',
     stars: 5
   }
 ];
@@ -329,7 +329,7 @@ useEffect(() => {
           <div className="max-w-4xl mx-auto bg-[#1B1464] rounded-xl p-8">
             <div className="grid grid-cols-2 gap-8">
               <div className="text-center">
-                <img src="https://placehold.co/100x30" alt="Kure Logo" className="mx-auto mb-4" />
+                <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.580966eb.png&w=640&q=75" alt="Kure Logo" className="mx-auto mb-4" />
               </div>
               <div className="text-center">
                 <h3 className="text-xl">Dietas ou esportes</h3>
@@ -442,7 +442,7 @@ useEffect(() => {
               </Button>
             </div>
             <div className="flex justify-center">
-              <img src="https://placehold.co/500x300" alt="Mulher relaxando com fones de ouvido" className="rounded-lg" />
+              <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffirst_session_image.757e34fc.png&w=3840&q=75" alt="Mulher relaxando com fones de ouvido" className="rounded-lg" />
             </div>
           </div>
         </section>
