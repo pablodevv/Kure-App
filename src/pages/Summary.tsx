@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-import { Scale, Star, Check, Cookie, UtensilsCrossed, Frown } from 'lucide-react';
+import { Scale, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 
 const generateChartData = (startWeight: number, targetWeight: number) => {
@@ -76,6 +76,16 @@ export default function Summary() {
 
   return (
     <div className="min-h-screen bg-[#0A061E] text-white">
+      {/* Header */}
+      <header className="w-full py-4 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex justify-start items-center">
+          <div className="flex items-center gap-2">
+            <Brain className="w-8 h-8" />
+            <span className="text-2xl font-semibold">kure</span>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <motion.div
@@ -123,6 +133,7 @@ export default function Summary() {
                 <span className="text-sm">Outros apps de perda de peso</span>
               </div>
             </div>
+            <p className="text-gray-400 mt-4 text-center">com base nas suas respostas</p>
           </div>
 
           <div>
@@ -131,7 +142,7 @@ export default function Summary() {
               você pode alcançar <span className="text-purple-400">85% do<br />
               seu objetivo em 1 mês</span>
             </h1>
-            <p className="text-gray-400 mb-8">
+            <p className="text-gray-400 mb-8 lg:mb-0">
               Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
             </p>
             <button
@@ -182,6 +193,7 @@ export default function Summary() {
                 <span className="text-sm">Outros apps de perda de peso</span>
               </div>
             </div>
+            <p className="text-gray-400 mt-4">com base nas suas respostas</p>
           </div>
         </motion.div>
         <p className="text-gray-400 mt-8 text-center lg:text-left">
