@@ -274,6 +274,15 @@ export default function Summary() {
       {/* Expert Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+           <div>
+            <img
+              src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmargot-promise.64216275.png&w=3840&q=75"
+              alt="Especialista em perda de peso"
+              className="rounded-2xl w-full"
+            />
+          </div>
+          
           <div>
             <h2 className="text-4xl font-bold mb-8">Especialistas por trás do seu plano</h2>
             <p className="text-gray-400 mb-6">
@@ -301,13 +310,7 @@ export default function Summary() {
               Começar agora
             </button>
           </div>
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-              alt="Especialista em perda de peso"
-              className="rounded-2xl w-full"
-            />
-          </div>
+         
         </div>
       </div>
 
