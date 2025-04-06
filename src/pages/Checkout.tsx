@@ -90,8 +90,8 @@ const comparisonItems = [
   },
   {
     label: 'Preço',
-    kure: { icon: CheckCircle, text: 'USD 19.29 por mês*', color: 'text-green-400' },
-    alternative: { icon: X, text: 'USD 55.00–150.00 por visita**', color: 'text-gray-500' }
+    kure: { icon: CheckCircle, text: 'R$ 19.29 por mês*', color: 'text-green-400' },
+    alternative: { icon: X, text: 'R$ 55.00–150.00 por visita**', color: 'text-gray-500' }
   },
   {
     label: 'Foco na causa raiz',
@@ -218,16 +218,16 @@ useEffect(() => {
                   />
                   <label htmlFor={`${plan.id}${isBottom ? '-bottom' : ''}`}>{plan.title}</label>
                   <div className="mt-1">
-                    <span className="line-through text-gray-500">USD {plan.originalPrice}</span>{' '}
-                    <span className="font-bold">USD {plan.price}</span>
+                    <span className="line-through text-gray-500">R$ {plan.originalPrice}</span>{' '}
+                    <span className="font-bold">R$ {plan.price}</span>
                   </div>
                 </div>
                 <div className="text-right">
                   <div>
-                    <span className="line-through text-gray-500">USD {plan.originalPricePerDay}</span>
+                    <span className="line-through text-gray-500">R$ {plan.originalPricePerDay}</span>
                   </div>
                   <div>
-                    <span className="font-bold">USD {plan.pricePerDay}</span>
+                    <span className="font-bold">R$ {plan.pricePerDay}</span>
                     <span className="text-gray-500 text-sm">/dia</span>
                   </div>
                 </div>
@@ -254,7 +254,7 @@ useEffect(() => {
         <div className="text-center mt-4">
           <p className="text-sm mb-4">Checkout seguro garantido</p>
           <div className="flex justify-center items-center gap-4">
-            <img src="https://placehold.co/300x40" alt="Métodos de pagamento" className="h-8" />
+            <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsafe_checkout_brands.63412609.png&w=2048&q=75" alt="Métodos de pagamento" className="h-8" />
           </div>
         </div>
       </div>
@@ -300,7 +300,7 @@ useEffect(() => {
   return (
     <div className="min-h-screen bg-[#0F0A3C] text-white">
       <div className="bg-[#FF4B7B] py-3 text-center">
-        <p className="text-sm">
+        <p>
           Comece sua primeira sessão {getTimeOfDayMessage()}! Seu desconto termina em:{' '}
           <span className="font-bold">
             {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
@@ -353,9 +353,9 @@ useEffect(() => {
             </div>
 
             <div className="mt-8 text-sm text-gray-400">
-              <p>*USD 19.29 pelo primeiro mês de assinatura Kure.</p>
-              <p>**Preço médio de personal coach nos EUA USD 55.00–65.00 por visita.</p>
-              <p className="ml-4">Preço médio de nutricionista USD 70.00–150.00 por visita.</p>
+              <p>*R$ 19.29 pelo primeiro mês de assinatura Kure.</p>
+              <p>**Preço médio de personal coach nos EUA R$ 55.00–65.00 por visita.</p>
+              <p className="ml-4">Preço médio de nutricionista R$ 70.00–150.00 por visita.</p>
             </div>
           </div>
 
@@ -411,7 +411,7 @@ useEffect(() => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl mb-4">
-                Compre o plano de 3 meses e ganhe um presente SECRETO no valor de USD 19.99
+                Compre o plano de 3 meses e ganhe um presente SECRETO no valor de R$ 19.99
               </h2>
               <p className="text-gray-300">
                 A equipe Kure quer apoiar sua relação com a comida e sua transformação, então ganhe esta surpresa GRÁTIS!
