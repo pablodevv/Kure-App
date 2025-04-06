@@ -116,6 +116,11 @@ const comparisonItems = [
 ];
 
 export default function Checkout() {
+
+useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const [selectedPlan, setSelectedPlan] = useState<Plan['id']>('1-month');
   const [selectedPlanBottom, setSelectedPlanBottom] = useState<Plan['id']>('1-month');
   const [timeLeft, setTimeLeft] = useState({ minutes: 15, seconds: 0 });
