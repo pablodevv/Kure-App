@@ -437,9 +437,11 @@ useEffect(() => {
               <h2 className="text-3xl mb-4">
                 Sua primeira sessão Kure pode começar {getTimeOfDayMessage()}!
               </h2>
-              <Button variant="gradient" size="lg" onClick={() => handleGetPlan(selectedPlanBottom)}>
-                Comprar agora!
-              </Button>
+              
+            <Button variant="gradient" size="lg" onClick={scrollToPlans}>
+              Comprar agora!
+            </Button>
+          
             </div>
             <div className="flex justify-center">
               <img src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffirst_session_image.757e34fc.png&w=3840&q=75" alt="Mulher relaxando com fones de ouvido" className="rounded-lg" />
