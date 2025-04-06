@@ -25,11 +25,11 @@ const plans: Plan[] = [
   {
     id: '7-day',
     title: 'Plano de 7 dias',
-    price: 7.59,
-    originalPrice: 15.18,
-    pricePerDay: 1.08,
-    originalPricePerDay: 2.16,
-    link: 'https://bolt.new/~/sb1-3a9sjk7u', // Substitua pelo link real
+    price: 9.59,
+    originalPrice: 19.18,
+    pricePerDay: 1.37,
+    originalPricePerDay: 2.74,
+    link: 'https://go.disruptybr.com.br/ghzth', 
   },
   {
     id: '1-month',
@@ -39,7 +39,7 @@ const plans: Plan[] = [
     pricePerDay: 0.64,
     originalPricePerDay: 1.28,
     popular: true,
-    link: 'https://dashboard.render.com/web/srv-cvohe2p5pdvs739umg8g/deploys/dep-cvovt224d50c73bmi0q0', // Substitua pelo link real
+    link: 'https://go.disruptybr.com.br/sxy13viv8x', 
   },
   {
     id: '3-month',
@@ -49,7 +49,7 @@ const plans: Plan[] = [
     pricePerDay: 0.31,
     originalPricePerDay: 0.63,
     hasGift: true,
-    link: 'https://github.com/pablodevv/Kure-App/edit/master/src/pages/Checkout.tsx', // Substitua pelo link real
+    link: 'https://go.disruptybr.com.br/xxgxv', 
   },
 ];
 
