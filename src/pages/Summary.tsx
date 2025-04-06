@@ -300,7 +300,7 @@ export default function Summary() {
               para alcançar sucesso nas transformações corporais e nutricionais.
             </p>
             <div className="mb-8">
-              <h4 className="font-semibold">Margot Sitruk</h4>
+              <h4 className="font-semibold">Michele Rocha</h4>
               <p className="text-purple-400">Fundadora</p>
             </div>
             <button
@@ -324,32 +324,44 @@ export default function Summary() {
             </div>
             <h2 className="text-4xl font-bold">O que nossos usuários dizem sobre o Kure?</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-[#0A061E] p-6 rounded-xl"
-              >
-                <p className="text-sm text-gray-400 mb-2">{testimonial.date}</p>
-                <div className="flex gap-1 mb-4 text-yellow-400">
-                  {'★'.repeat(testimonial.rating)}
-                </div>
-                <p className="mb-4">{testimonial.text}</p>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
-                  <div>
-                    <p className="font-medium">{testimonial.author}</p>
-                    {testimonial.verified && (
-                      <p className="text-xs text-gray-400">USUÁRIO VERIFICADO</p>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#0A061E] p-6 rounded-xl"
+              >
+                <p className="text-sm text-gray-400 mb-2">{testimonial.date}</p>
+                <div className="flex gap-1 mb-4 text-yellow-400">
+                  {'★'.repeat(testimonial.rating)}
+                </div>
+                <p className="mb-4">{testimonial.text}</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full overflow-hidden">
+                    <img
+                      src={
+                        index === 0
+                          ? 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftestimonials_thumbnail_1.69412d07.png&w=256&q=75'
+                          : index === 1
+                          ? 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftestimonials_thumbnail_2.fff1b24f.png&w=256&q=75'
+                          : 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftestimonials_thumbnail_3.5bb2725f.png&w=256&q=75'
+                      }
+                      alt={testimonial.author}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-medium">{testimonial.author}</p>
+                    {testimonial.verified && (
+                      <p className="text-xs text-gray-400">USUÁRIO VERIFICADO</p>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
           <div className="text-center mt-12">
             <button
               onClick={() => navigate('/checkout')}
