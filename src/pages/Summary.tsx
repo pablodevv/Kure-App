@@ -242,31 +242,32 @@ export default function Summary() {
             </div>
 
             {/* Results Preview */}
-            <div className="space-y-8">
-              <div className="bg-[#0A061E] p-6 rounded-xl">
-                <div className="flex items-center gap-4 mb-4">
-                  <Cookie className="w-6 h-6 text-purple-400" />
-                  <div>
-                    <h4 className="font-semibold">Desejos por comida bloqueados</h4>
-                    <p className="text-gray-400">{answers?.foodCraving || 'Doces / chocolate'}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4 mb-4">
-                  <UtensilsCrossed className="w-6 h-6 text-purple-400" />
-                  <div>
-                    <h4 className="font-semibold">Hábitos alimentares interrompidos</h4>
-                    <p className="text-gray-400">{answers?.eatingHabit || 'Alimentação irregular'}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <Frown className="w-6 h-6 text-purple-400" />
-                  <div>
-                    <h4 className="font-semibold">Crença interna tóxica removida</h4>
-                    <p className="text-gray-400">{answers?.toxicBelief || 'Sinto que DEVO limpar o prato'}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
+<div className="space-y-8">
+  <div className="bg-[#0A061E] p-6 rounded-xl">
+    <div className="flex items-center gap-4 mb-4">
+      <Cookie className="w-6 h-6 text-purple-400" />
+      <div>
+        <h4 className="font-semibold">Desejos por comida bloqueados</h4>
+        <p className="text-gray-400">{answers?.food_craving || 'Doces / chocolate'}</p> {/* Use 'food_craving' */}
+      </div>
+    </div>
+    <div className="flex items-center gap-4 mb-4">
+      <UtensilsCrossed className="w-6 h-6 text-purple-400" />
+      <div>
+        <h4 className="font-semibold">Hábitos alimentares interrompidos</h4>
+        <p className="text-gray-400">{answers?.eating_habits || 'Alimentação irregular'}</p> {/* Use 'eating_habits' */}
+      </div>
+    </div>
+    <div className="flex items-center gap-4">
+      <Frown className="w-6 h-6 text-purple-400" />
+      <div>
+        <h4 className="font-semibold">Crença interna tóxica removida</h4>
+        <p className="text-gray-400">{answers?.internal_belief || 'Sinto que DEVO limpar o prato'}</p> {/* Use 'internal_belief' */}
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
