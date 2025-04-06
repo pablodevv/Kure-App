@@ -87,15 +87,15 @@ export default function Summary() {
       </header>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
           {/* Mobile First: Prediction Section */}
-          <div className="lg:hidden bg-[#1A1632] rounded-2xl p-6 mb-8">
-            <h3 className="text-xl font-semibold mb-4">Sua previsão de perda de peso com o Kure</h3>
+          <div className="lg:hidden bg-[#1A1632] rounded-2xl p-6">
+            <h3 className="text-xl font-semibold mb-4" style={{ textAlign: 'center' }}>Sua previsão de perda de peso com o Kure</h3>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
@@ -126,14 +126,14 @@ export default function Summary() {
             <div className="flex gap-6 mt-4">
               <div className="flex items-center gap-2">
                 <div className="w-4 h-0.5 bg-purple-500"></div>
-                <span className="text-sm">Seu progresso usando Kure</span>
+                <b><span className="text-sm">Seu progresso usando Kure</span></b>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-4 h-0.5 bg-gray-500 border-dashed"></div>
-                <span className="text-sm">Outros apps de perda de peso</span>
+               <b><span className="text-sm">Outros apps de perda de peso</span></b>
               </div>
             </div>
-            <p className="text-gray-400 mt-4 text-center">com base nas suas respostas</p>
+            
           </div>
 
           <div>
