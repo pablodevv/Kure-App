@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { useNavigate } from 'react-router-dom';
-import { Scale, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
+import { WeightScale, Star, Check, Cookie, UtensilsCrossed, Frown, Brain } from 'lucide-react';
 import { useQuizStore } from '../store/quiz';
 
 const generateChartData = (startWeight: number, targetWeight: number) => {
