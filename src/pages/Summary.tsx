@@ -137,11 +137,11 @@ export default function Summary() {
           </div>
 
           <div>
-            <h1 className="text-5xl font-bold mb-6">
-              Com base em suas respostas,<br />
-              você pode alcançar <span className="text-purple-400">85% do<br />
-              seu objetivo em 1 mês</span>
-            </h1>
+            <h1 className="font-bold mb-6" style={{ fontSize: '2.2rem' }}>
+  Com base em suas respostas,
+  você pode alcançar <span className="text-purple-400">85% do<br />
+  seu objetivo em 1 mês</span>
+</h1>
             <p className="text-gray-400 mb-8 lg:mb-0">
               Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
             </p>
@@ -196,9 +196,7 @@ export default function Summary() {
             <p className="text-gray-400 mt-4">com base nas suas respostas</p>
           </div>
         </motion.div>
-        <p className="text-gray-400 mt-8 text-center lg:text-left">
-          Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
-        </p>
+        
       </div>
 
       {/* Weekly Plan Section */}
