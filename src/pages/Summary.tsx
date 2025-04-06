@@ -7,7 +7,7 @@ import { useQuizStore } from '../store/quiz';
 const generateChartData = (startWeight: number, targetWeight: number) => {
   const difference = startWeight - targetWeight;
   const step = difference / 4;
-  
+
   return [
     { week: 'Start', kure: startWeight, other: startWeight },
     { week: 'Week 2', kure: startWeight - step, other: startWeight - (step * 0.5) },
@@ -76,15 +76,81 @@ export default function Summary() {
 
   return (
     <div className="min-h-screen bg-[#0A061E] text-white">
-
-    <div className="bg-[#1A1632] rounded-2xl p-6">
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
+          {/* Mobile First: Prediction Section */}
+          <div className="lg:hidden bg-[#1A1632] rounded-2xl p-6 mb-8">
             <h3 className="text-xl font-semibold mb-4">Sua previsão de perda de peso com o Kure</h3>
             <div className="h-[300px]">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
                   <XAxis dataKey="week" stroke="#fff" />
-                  <YAxis 
-                    stroke="#fff" 
+                  <YAxis
+                    stroke="#fff"
+                    domain={[Math.min(targetWeight, 50), Math.max(weight, 80)]}
+                    ticks={[50, 55, 60, 65, 70, 75, 80]}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="kure"
+                    stroke="#8B5CF6"
+                    strokeWidth={3}
+                    dot={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="other"
+                    stroke="#4B5563"
+                    strokeWidth={2}
+                    strokeDasharray="5 5"
+                    dot={false}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex gap-6 mt-4">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-0.5 bg-purple-500"></div>
+                <span className="text-sm">Seu progresso usando Kure</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-0.5 bg-gray-500 border-dashed"></div>
+                <span className="text-sm">Outros apps de perda de peso</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h1 className="text-5xl font-bold mb-6">
+              Com base em suas respostas,<br />
+              você pode alcançar <span className="text-purple-400">85% do<br />
+              seu objetivo em 1 mês</span>
+            </h1>
+            <p className="text-gray-400 mb-8">
+              Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
+            </p>
+            <button
+              onClick={() => navigate('/checkout')}
+              className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
+            >
+              Começar agora
+            </button>
+          </div>
+
+          {/* Desktop Prediction Section */}
+          <div className="hidden lg:block bg-[#1A1632] rounded-2xl p-6">
+            <h3 className="text-xl font-semibold mb-4">Sua previsão de perda de peso com o Kure</h3>
+            <div className="h-[300px]">
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+                  <XAxis dataKey="week" stroke="#fff" />
+                  <YAxis
+                    stroke="#fff"
                     domain={[Math.min(targetWeight, 50), Math.max(weight, 80)]}
                     ticks={[50, 55, 60, 65, 70, 75, 80]}
                   />
@@ -118,34 +184,10 @@ export default function Summary() {
             </div>
           </div>
         </motion.div>
+        <p className="text-gray-400 mt-8 text-center lg:text-left">
+          Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
+        </p>
       </div>
-
-      
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-        >
-          <div>
-            <h1 className="text-5xl font-bold mb-6">
-              Com base em suas respostas,<br />
-              você pode alcançar <span className="text-purple-400">85% do<br />
-              seu objetivo em 1 mês</span>
-            </h1>
-            <p className="text-gray-400 mb-8">
-              Aqui está o que prevemos com base em 24.000+ usuários com IMC e hábitos alimentares semelhantes.
-            </p>
-            <button
-              onClick={() => navigate('/checkout')}
-              className="bg-gradient-to-r from-purple-500 to-cyan-500 text-white px-12 py-4 rounded-full text-lg font-medium hover:opacity-90 transition-opacity"
-            >
-              Começar agora
-            </button>
-          </div>
-
-          
 
       {/* Weekly Plan Section */}
       <div className="bg-[#1A1632] py-16">
@@ -153,7 +195,7 @@ export default function Summary() {
           <h2 className="text-4xl font-bold text-center mb-6">
             Seu plano de perda de peso com hipnoterapia
           </h2>
-          
+
           <div className="flex justify-center gap-12 mb-12">
             <div className="text-center">
               <Scale className="w-8 h-8 mx-auto mb-2 text-purple-400" />
