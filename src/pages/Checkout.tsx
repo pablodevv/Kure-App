@@ -303,7 +303,7 @@ useEffect(() => {
         <p className="text-sm">
           Comece sua primeira sessão {getTimeOfDayMessage()}! Seu desconto termina em:{' '}
           <span className="font-bold">
-            {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}:00
+            {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
           </span>
         </p>
       </div>
