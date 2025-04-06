@@ -9,10 +9,10 @@ const generateChartData = (startWeight: number, targetWeight: number) => {
   const step = difference / 4;
 
   return [
-    { week: 'Start', kure: startWeight, other: startWeight },
-    { week: 'Week 2', kure: startWeight - step, other: startWeight - (step * 0.5) },
-    { week: 'Week 4', kure: startWeight - (step * 2), other: startWeight - (step * 0.7) },
-    { week: 'Week 8', kure: targetWeight, other: startWeight - step },
+    { week: 'Começo', kure: startWeight, other: startWeight },
+    { week: 'Semana 2', kure: startWeight - step, other: startWeight - (step * 0.5) },
+    { week: 'Semana 4', kure: startWeight - (step * 2), other: startWeight - (step * 0.7) },
+    { week: 'Semana 8', kure: targetWeight, other: startWeight - step },
   ];
 };
 
