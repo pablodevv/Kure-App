@@ -331,7 +331,7 @@ export default function Checkout() {
             <div>
               <h3 className="text-xl mb-2">Garantia sem risco</h3>
               <p className="text-gray-300">
-                Sem resultados? Entre em contato com nosso suporte ao cliente e podemos cancelar sua assinatura a qualquer momento sem cobranças adicionais.
+                Sem resultados? Entre em contato com nosso suporte ao cliente e podemos reembolsar seu plano a qualquer momento sem fazer perguntas.
               </p>
             </div>
           </div>
