@@ -180,9 +180,9 @@ const questions = [
     id: 'previous_attempts',
     title: 'Você já tentou perder peso antes?',
     options: [
-      { label: 'Sim, mas só tive sucesso por um tempo limitado', emoji: '⏳' },
-      { label: 'Tentei, mas não consegui alcançar meu peso ideal', emoji: '🎯' },
-      { label: 'Ainda não', emoji: '🆕' }
+      { label: 'Sim, mas só tive sucesso por um tempo limitado', emoji: '😕' },
+      { label: 'Tentei, mas não consegui alcançar meu peso ideal', emoji: '😔' },
+      { label: 'Ainda não', emoji: '😬' }
     ]
   },
   {
@@ -214,11 +214,11 @@ const questions = [
   },
   {
     id: 'referral',
-    title: 'Você foi indicado ao Kure por um nutricionista ou terapeuta CBT?',
+    title: 'Você foi indicado ao Kure por um nutricionista ou psicólogo TCC?',
     subtitle: 'A hipnose é um método cientificamente comprovado para resolver problemas relacionados à nutrição e questões psicológicas.',
     options: [
-      { label: 'Sim', emoji: '✅' },
-      { label: 'Não', emoji: '❌' }
+      { label: 'Sim', emoji: '👍' },
+      { label: 'Não', emoji: '👎' }
     ]
   },
   {
@@ -226,9 +226,9 @@ const questions = [
     title: 'Qual você acha que é a principal causa do seu ganho de peso atual?',
     options: [
       { label: 'Alimentação não saudável', emoji: '🍔' },
-      { label: 'Maus hábitos alimentares', emoji: '📅' },
-      { label: 'Falta de força de vontade', emoji: '💪' },
-      { label: 'Menopausa', emoji: '🌡️' },
+      { label: 'Maus hábitos alimentares', emoji: '😐' },
+      { label: 'Falta de força de vontade', emoji: '😔' },
+      { label: 'Menopausa', emoji: '👵' },
       { label: 'Gravidez', emoji: '🤰' },
       { label: 'Relacionado ao estresse', emoji: '😰' },
       { label: 'Produtos farmacêuticos', emoji: '💊' },
