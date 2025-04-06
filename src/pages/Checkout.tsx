@@ -194,13 +194,12 @@ export default function Checkout() {
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
   const handleGetPlan = () => {
-    if (checkoutLink) {
-      navigate(checkoutLink); // Redireciona para o link armazenado no estado
-    } else {
-      console.error('Nenhum link de checkout definido para o plano selecionado.');
-      // Você pode adicionar um tratamento de erro aqui, se necessário
-    }
-  };
+  if (checkoutLink) {
+    window.location.href = checkoutLink; // Use window.location.href para URLs externas
+  } else {
+    console.error('Nenhum link de checkout definido para o plano selecionado.');
+  }
+};
 
   const toggleFAQ = (index: number) => {
     setFaqItems(prev => prev.map((item, i) => ({
