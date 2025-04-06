@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle, Gift, Shield, Star, X, HelpCircle, Activity, Smile, Frown, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '../components/Button';
-import { useRouter } from 'next/router'; 
+import { useNavigate } from 'react-router-dom'; // Importe useNavigate do react-router-dom
 
 interface Plan {
   id: '7-day' | '1-month' | '3-month';
@@ -12,7 +12,7 @@ interface Plan {
   originalPricePerDay: number;
   popular?: boolean;
   hasGift?: boolean;
-  link: string; 
+  link: string; // Adicione a propriedade 'link'
 }
 
 interface FAQItem {
@@ -29,7 +29,7 @@ const plans: Plan[] = [
     originalPrice: 15.18,
     pricePerDay: 1.08,
     originalPricePerDay: 2.16,
-    link: 'https://dashboard.render.com/web/srv-cvohe2p5pdvs739umg8g/deploys/dep-cvovl424d50c73bmg740',
+    link: 'https://bolt.new/~/sb1-3a9sjk7u', // Substitua pelo link real
   },
   {
     id: '1-month',
@@ -39,7 +39,7 @@ const plans: Plan[] = [
     pricePerDay: 0.64,
     originalPricePerDay: 1.28,
     popular: true,
-    link: 'https://bolt.new/~/sb1-3a9sjk7u', 
+    link: 'https://dashboard.render.com/web/srv-cvohe2p5pdvs739umg8g/deploys/dep-cvovt224d50c73bmi0q0', // Substitua pelo link real
   },
   {
     id: '3-month',
@@ -49,7 +49,7 @@ const plans: Plan[] = [
     pricePerDay: 0.31,
     originalPricePerDay: 0.63,
     hasGift: true,
-    link: 'https://github.com/pablodevv/Kure-App/edit/master/src/pages/Checkout.tsx',
+    link: 'https://github.com/pablodevv/Kure-App/edit/master/src/pages/Checkout.tsx', // Substitua pelo link real
   },
 ];
 
@@ -128,7 +128,7 @@ export default function Checkout() {
 
   const [selectedPlan, setSelectedPlan] = useState<Plan['id']>('1-month');
   const [selectedPlanBottom, setSelectedPlanBottom] = useState<Plan['id']>('1-month');
-  const [checkoutLink, setCheckoutLink] = useState(''); 
+  const [checkoutLink, setCheckoutLink] = useState(''); // Novo estado para o link
   const [timeLeft, setTimeLeft] = useState({ minutes: 15, seconds: 0 });
   const [faqItems, setFaqItems] = useState<FAQItem[]>([
     {
@@ -153,10 +153,10 @@ export default function Checkout() {
     }
   ]);
 
-  const router = useRouter(); 
+  const navigate = useNavigate(); // Inicialize useNavigate
 
   useEffect(() => {
-    
+    // Atualiza o link quando o plano selecionado muda
     const plan = plans.find(p => p.id === selectedPlan);
     if (plan) {
       setCheckoutLink(plan.link);
@@ -164,7 +164,7 @@ export default function Checkout() {
   }, [selectedPlan]);
 
   useEffect(() => {
-    
+    // Atualiza o link quando o plano selecionado na seção inferior muda
     const planBottom = plans.find(p => p.id === selectedPlanBottom);
     if (planBottom) {
       setCheckoutLink(planBottom.link);
@@ -195,10 +195,10 @@ export default function Checkout() {
 
   const handleGetPlan = () => {
     if (checkoutLink) {
-      router.push(checkoutLink); 
+      navigate(checkoutLink); // Redireciona para o link armazenado no estado
     } else {
       console.error('Nenhum link de checkout definido para o plano selecionado.');
-      
+      // Você pode adicionar um tratamento de erro aqui, se necessário
     }
   };
 
@@ -227,10 +227,10 @@ export default function Checkout() {
               onClick={() => {
                 if (isBottom) {
                   setSelectedPlanBottom(plan.id);
-                  setCheckoutLink(plan.link); 
+                  setCheckoutLink(plan.link); // Atualiza o link ao selecionar na seção inferior
                 } else {
                   setSelectedPlan(plan.id);
-                  setCheckoutLink(plan.link); 
+                  setCheckoutLink(plan.link); // Atualiza o link ao selecionar na seção superior
                 }
               }}
               className={`bg-white rounded-xl p-6 relative cursor-pointer ${
@@ -252,10 +252,10 @@ export default function Checkout() {
                     onChange={() => {
                       if (isBottom) {
                         setSelectedPlanBottom(plan.id);
-                        setCheckoutLink(plan.link); 
+                        setCheckoutLink(plan.link); // Atualiza o link ao mudar o radio na seção inferior
                       } else {
                         setSelectedPlan(plan.id);
-                        setCheckoutLink(plan.link); 
+                        setCheckoutLink(plan.link); // Atualiza o link ao mudar o radio na seção superior
                       }
                     }}
                     className="mr-3 accent-purple-500"
@@ -290,7 +290,7 @@ export default function Checkout() {
           variant="gradient"
           size="lg"
           className="w-full mt-6"
-          onClick={handleGetPlan}
+          onClick={handleGetPlan} // Agora a função handleGetPlan será chamada
         >
           Obter meu plano
         </Button>
