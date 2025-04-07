@@ -49,10 +49,10 @@ export default function Home() {
           />
 
           <h1 className="text-4xl font-semibold mb-4" style={{ fontSize: '35px', width: '350px', marginBottom: '0' }}>
-            Hipnose para Perda de Peso
+            Bariátrica Virtual com Hipnoterapia
           </h1>
           <b style={{ marginBottom: '0', color: 'white' }}><p className="text-gray-400 mb-8" style={{ marginBottom: '0', color: 'white' }}>
-            De acordo com idade e gênero
+            Sem exercícios ou mudanças na dieta – apenas 15 minutos por dia para começar a ver resultados reais
           </p></b>
 
           <div className="flex flex-col gap-4 w-full max-w-md">
@@ -72,6 +72,10 @@ export default function Home() {
               </button>
             </div>
           </div>
+
+          <p className="text-gray-400 mb-8" style={{ marginBottom: '0', color: 'white' }}>
+            Com base em entrevistas com usuários, 98% estão satisfeitos
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" style={{ marginTop: '0' }}>
             <div className="p-6 border border-gray-800 rounded-lg" style={{ marginBottom: '-20px' }}>
