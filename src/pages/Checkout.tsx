@@ -341,15 +341,15 @@ export default function Checkout() {
   );
 
   return (
-    <div className="min-h-screen bg-[#0F0A3C] text-white">
-      <div className="bg-[#FF4B7B] py-3 text-center">
-        <p>
-          Comece sua primeira sessão {getTimeOfDayMessage()}! Seu desconto termina em:{' '}
-          <span className="font-bold">
-            {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
-          </span>
-        </p>
-      </div>
+    <div className="min-h-screen bg-[#0F0A3C] text-white pt-16">
+  <div className="fixed top-0 w-full bg-[#FF4B7B] py-3 text-center z-50">
+    <p>
+      Comece sua primeira sessão {getTimeOfDayMessage()}! Seu desconto termina em:{' '}
+      <span className="font-bold">
+        {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
+      </span>
+    </p>
+  </div>
 
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-center gap-2 mb-4">
