@@ -489,9 +489,15 @@ export default function Quiz() {
     }
   };
 
+const SKIP_EMAIL_SCREEN = true;
+  
   const handleLoadingComplete = () => {
     setProcessingAnswers(false);
+    if (SKIP_EMAIL_SCREEN) {
+    navigate('/summary');
+  } else {
     setShowEmailCollection(true);
+  }
   };
 
   const handleNumberInput = (value: number) => {
