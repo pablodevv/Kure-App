@@ -65,6 +65,43 @@ fbq('track', 'PageView');
 
     <script src="https://curtinaz.github.io/keep-params/keep-params.js"></script>
 
+
+
+<script>
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+window.onload = function() {
+    var utm_source = getParameterByName('utm_source', document.referrer);
+    var utm_campaign = getParameterByName('utm_campaign', document.referrer);
+    var utm_medium = getParameterByName('utm_medium', document.referrer);
+    var utm_content = getParameterByName('utm_content', document.referrer);
+    var utm_term = getParameterByName('utm_term', document.referrer);
+
+    var newURL = window.location.href;
+    var hasParams = newURL.indexOf('?') > -1;
+    var paramsToAdd = [];
+
+    if (utm_source) paramsToAdd.push('utm_source=' + encodeURIComponent(utm_source));
+    if (utm_campaign) paramsToAdd.push('utm_campaign=' + encodeURIComponent(utm_campaign));
+    if (utm_medium) paramsToAdd.push('utm_medium=' + encodeURIComponent(utm_medium));
+    if (utm_content) paramsToAdd.push('utm_content=' + encodeURIComponent(utm_content));
+    if (utm_term) paramsToAdd.push('utm_term=' + encodeURIComponent(utm_term));
+
+    if (paramsToAdd.length > 0) {
+        newURL += (hasParams ? '&' : '?') + paramsToAdd.join('&');
+        window.history.replaceState({}, document.title, newURL);
+    }
+};
+</script>
+
     
   </head>
   <body>
