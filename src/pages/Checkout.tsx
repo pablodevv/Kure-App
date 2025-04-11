@@ -43,7 +43,7 @@ const plans: Plan[] = [
   },
   {
     id: '3-month',
-    title: 'Plano de 3 meses',
+    title: 'o de 3 meses',
     price: 28.59,
     originalPrice: 57.19,
     pricePerDay: 0.31,
@@ -194,12 +194,13 @@ export default function Checkout() {
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
   const handleGetPlan = () => {
-  if (checkoutLink) {
-    window.location.href = checkoutLink; // Use window.location.href para URLs externas
+  if (selectedPlan?.link) {
+    window.location.href = selectedPlan.link;
   } else {
     console.error('Nenhum link de checkout definido para o plano selecionado.');
   }
 };
+
 
   const toggleFAQ = (index: number) => {
     setFaqItems(prev => prev.map((item, i) => ({
