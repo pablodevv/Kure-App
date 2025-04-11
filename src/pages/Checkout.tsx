@@ -472,6 +472,11 @@ const handleGetBottomPlan = () => {
             <CheckCircle className="w-5 h-5" />
             <p>Mais de 345.000 programas vendidos.</p>
           </div>
+
+          <h1 className="text-4xl font-serif mb-12 text-center max-w-2xl mx-auto">
+          Obtenha sessões personalizadas de hipnoterapia para seu sucesso na perda de peso!
+        </h1>
+          
           {renderPlansSection(true)}
         </section>
 
