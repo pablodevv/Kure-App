@@ -244,7 +244,7 @@ const handleGetBottomPlan = () => {
                   <input
                     type="radio"
                     name={isBottom ? "plan-bottom" : "plan"}
-                    id={`<span class="math-inline">\{plan\.id\}</span>{isBottom ? '-bottom' : ''}`}
+                    id={`${plan.id}${isBottom ? '-bottom' : ''}`}
                     checked={(isBottom ? selectedPlanBottom : selectedPlan) === plan.id}
                     onChange={() => {
                       if (isBottom) {
@@ -257,7 +257,7 @@ const handleGetBottomPlan = () => {
                     }}
                     className="mr-3 accent-purple-500"
                   />
-                  <label htmlFor={`<span class="math-inline">\{plan\.id\}</span>{isBottom ? '-bottom' : ''}`}>{plan.title}</label>
+                  <label htmlFor={`${plan.id}${isBottom ? '-bottom' : ''}`}>{plan.title}</label>
                   <div className="mt-1">
                     <span className="line-through text-gray-500">R$ {plan.originalPrice}</span>{' '}
                     <span className="font-bold">R$ {plan.price}</span>
