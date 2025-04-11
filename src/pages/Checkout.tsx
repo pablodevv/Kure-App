@@ -29,7 +29,7 @@ const plans: Plan[] = [
     originalPrice: 19.18,
     pricePerDay: 1.37,
     originalPricePerDay: 2.74,
-    link: 'https://go.disruptybr.com.br/ghzth', 
+    link: 'https://pay.kirvano.com/35c5a14e-f869-4b0d-9824-002508079a15', 
   },
   {
     id: '1-month',
@@ -39,7 +39,7 @@ const plans: Plan[] = [
     pricePerDay: 0.64,
     originalPricePerDay: 1.28,
     popular: true,
-    link: 'https://go.disruptybr.com.br/sxy13viv8x', 
+    link: 'https://pay.kirvano.com/93aaaedf-ccb1-4145-a817-3331514ce1de', 
   },
   {
     id: '3-month',
@@ -49,7 +49,7 @@ const plans: Plan[] = [
     pricePerDay: 0.31,
     originalPricePerDay: 0.63,
     hasGift: true,
-    link: 'https://go.disruptybr.com.br/xxgxv', 
+    link: 'https://pay.kirvano.com/3c4842c4-4e3a-46cd-b66c-8f0b6e01ac10', 
   },
 ];
 
