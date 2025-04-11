@@ -312,7 +312,7 @@ const handleGetBottomPlan = () => {
           ))}
         </ul>
 
-        <br>
+        <br />
           <h2 class="text-xl mb-6 text-left">Se você selecionar o plano de 3 meses:</h2>
         <div className="mt-8 bg-gradient-to-r from-purple-900 to-blue-900 rounded-xl p-6">
           <div className="flex gap-4">
@@ -345,7 +345,7 @@ const handleGetBottomPlan = () => {
     <div className="min-h-screen bg-[#0F0A3C] text-white pt-16">
   <div className="fixed top-0 w-full bg-[#FF4B7B] py-4 text-center z-50">
     <p>
-      Comece sua primeira sessão {getTimeOfDayMessage()}! Seu desconto termina em:{' '}
+      Comece sua primeira sessão {getTimeOfDayMessage()}!<br />Seu desconto termina em:{' '}
       <span className="font-bold">
         {formatTime(timeLeft.minutes)}:{formatTime(timeLeft.seconds)}
       </span>
