@@ -193,13 +193,14 @@ export default function Checkout() {
 
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
-  const handleGetPlan = () => {
-  if (selectedPlan?.link) {
-    window.location.href = selectedPlan.link;
+const handleGetPlan = () => {
+  if (checkoutLink) {
+    window.location.href = checkoutLink;
   } else {
     console.error('Nenhum link de checkout definido para o plano selecionado.');
   }
 };
+
 
 
   const toggleFAQ = (index: number) => {
