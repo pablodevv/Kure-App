@@ -128,7 +128,7 @@ export default function Checkout() {
 
   const [selectedPlan, setSelectedPlan] = useState<Plan['id']>('1-month');
   const [selectedPlanBottom, setSelectedPlanBottom] = useState<Plan['id']>('1-month');
-  const [checkoutLink, setCheckoutLink] = useState(''); // Novo estado para o link
+  
   const [timeLeft, setTimeLeft] = useState({ minutes: 15, seconds: 0 });
   const [faqItems, setFaqItems] = useState<FAQItem[]>([
     {
@@ -155,21 +155,7 @@ export default function Checkout() {
 
   const navigate = useNavigate(); // Inicialize useNavigate
 
-  useEffect(() => {
-    // Atualiza o link quando o plano selecionado muda
-    const plan = plans.find(p => p.id === selectedPlan);
-    if (plan) {
-      setCheckoutLink(plan.link);
-    }
-  }, [selectedPlan]);
-
-  useEffect(() => {
-    // Atualiza o link quando o plano selecionado na seção inferior muda
-    const planBottom = plans.find(p => p.id === selectedPlanBottom);
-    if (planBottom) {
-      setCheckoutLink(planBottom.link);
-    }
-  }, [selectedPlanBottom]);
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -193,11 +179,21 @@ export default function Checkout() {
 
   const formatTime = (num: number) => num.toString().padStart(2, '0');
 
-const handleGetPlan = () => {
-  if (checkoutLink) {
-    window.location.href = checkoutLink;
+const handleGetTopPlan = () => {
+  const plan = plans.find(p => p.id === selectedPlan);
+  if (plan?.link) {
+    window.location.href = plan.link;
   } else {
-    console.error('Nenhum link de checkout definido para o plano selecionado.');
+    console.error('Link do plano superior não encontrado');
+  }
+};
+
+const handleGetBottomPlan = () => {
+  const plan = plans.find(p => p.id === selectedPlanBottom);
+  if (plan?.link) {
+    window.location.href = plan.link;
+  } else {
+    console.error('Link do plano inferior não encontrado');
   }
 };
 
@@ -288,13 +284,14 @@ const handleGetPlan = () => {
         </div>
 
         <Button
-          variant="gradient"
-          size="lg"
-          className="w-full mt-6"
-          onClick={handleGetPlan} // Agora a função handleGetPlan será chamada
-        >
-          Obter meu plano
-        </Button>
+  variant="gradient"
+  size="lg"
+  className="w-full mt-6"
+  onClick={isBottom ? handleGetBottomPlan : handleGetTopPlan}
+>
+  Obter meu plano
+</Button>
+
 
         <div className="text-center mt-4">
           <p className="text-sm mb-4">Checkout seguro garantido</p>
