@@ -43,7 +43,7 @@ const plans: Plan[] = [
   },
   {
     id: '3-month',
-    title: 'o de 3 meses',
+    title: 'Plano de 3 meses',
     price: 28.59,
     originalPrice: 57.19,
     pricePerDay: 0.31,
