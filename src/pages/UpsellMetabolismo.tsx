@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react"
 import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
 
+
+export default function UpsellMetabolismo() {
+  const [timeLeft, setTimeLeft] = useState(600)
+
+
 useEffect(() => {
   // Rola a página para o topo sempre que ela for renderizada
   window.scrollTo(0, 0);
 }, []);
 
-export default function UpsellMetabolismo() {
-  const [timeLeft, setTimeLeft] = useState(600)
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
