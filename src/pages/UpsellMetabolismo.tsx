@@ -1,12 +1,8 @@
 import { useEffect, useRef, useState } from "react"
-import { Button } from '../components/Button';
 import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
-import { useNavigate } from "react-router-dom"
 
 export default function UpsellMetabolismo() {
-  const [timeLeft, setTimeLeft] = useState(600) // 10 minutos
-  const navigate = useNavigate()
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [timeLeft, setTimeLeft] = useState(600)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,18 +11,30 @@ export default function UpsellMetabolismo() {
     return () => clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    const script1 = document.createElement("script")
+    script1.innerHTML = `
+      var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+      var nextPageURL = "https://kure-app.netlify.app/upsell2";
+      var refusePageURL = "https://kure-app.netlify.app/upsell2";
+    `
+    const script2 = document.createElement("script")
+    script2.src = "https://snippets.kirvano.com/upsell.min.js"
+    script2.async = true
+
+    document.body.appendChild(script1)
+    document.body.appendChild(script2)
+
+    return () => {
+      document.body.removeChild(script1)
+      document.body.removeChild(script2)
+    }
+  }, [])
+
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60)
     const s = seconds % 60
     return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
-  }
-
-  const handleAccept = () => {
-    window.location.href = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba"
-  }
-
-  const handleDecline = () => {
-    navigate("/upsell2")
   }
 
   return (
@@ -83,7 +91,6 @@ export default function UpsellMetabolismo() {
           </p>
         </div>
 
-        {/* Prova Social */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <div className="flex items-center gap-2">
             <UserCircle2 className="w-6 h-6 text-gray-400" />
@@ -94,21 +101,18 @@ export default function UpsellMetabolismo() {
           </div>
         </div>
 
-        <Button
-          ref={buttonRef}
-          onClick={handleAccept}
-          className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
+        <button
+          className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
         >
           SIM! Quero ativar meu metabolismo agora 🔥
-        </Button>
+        </button>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
           Essa pequena decisão pode transformar seus resultados nos próximos dias.
         </p>
 
         <button
-          onClick={handleDecline}
-          className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
+          className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
         >
           Não quero acelerar meus resultados agora
         </button>
