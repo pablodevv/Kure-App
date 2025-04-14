@@ -25,7 +25,7 @@ export default function DownsellRenovacao3Meses() {
   }
 
   const handleDecline = () => {
-    navigate("/fim")
+    navigate("/upsell3")
   }
 
   return (
