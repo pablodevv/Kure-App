@@ -398,7 +398,7 @@ const handleGetBottomPlan = () => {
 
             <div className="mt-8 text-sm text-gray-400">
               
-              <p>**Preço médio de personal coach no Brasil R$ 85.00–200.00 por hora/aula.</p>
+              <p>**Preço médio de personal trainer no Brasil R$ 85.00–200.00 por hora/aula.</p>
               <p className="ml-4">Preço médio de nutricionista R$ 100.00–300.00 por consulta.</p>
             </div>
           </div>
