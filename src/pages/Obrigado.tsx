@@ -1,4 +1,4 @@
-import { Smile, CheckCircle, Rocket } from "lucide-react"
+import { Smile, CheckCircle } from "lucide-react"
 
 export default function AgradecimentoFinal() {
   return (
@@ -18,18 +18,12 @@ export default function AgradecimentoFinal() {
           Tudo certo com sua sessão. Agora é hora de focar em você, cuidar da sua mente e transformar seus resultados com o Kure.
         </p>
 
-        <a
-          href="https://hipnose-kura.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white text-lg font-semibold px-6 py-4 rounded-xl shadow-lg transition-all"
-        >
-          <Rocket className="mr-2 w-5 h-5" />
-          Acessar o App Kure
-        </a>
+        <div className="bg-green-100 dark:bg-green-800 text-green-900 dark:text-green-100 text-md font-medium px-6 py-4 rounded-xl shadow-md">
+          A equipe do Kure vai te chamar no <strong>WhatsApp</strong> com seu acesso assim que seu app personalizado estiver pronto 💚
+        </div>
 
         <div className="text-sm text-gray-400 pt-6">
-          Dica: você também receberá uma mensagem no whatsapp de nossa equipe com o link de acesso 💚
+          Fique atento às suas mensagens — qualquer dúvida, estamos por aqui!
         </div>
 
         <div className="text-xs text-gray-500">
