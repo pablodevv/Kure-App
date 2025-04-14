@@ -15,7 +15,7 @@ export default function AgradecimentoFinal() {
         </h1>
 
         <p className="text-gray-600 dark:text-gray-300 text-lg">
-          Tudo certo com sua sessão. Agora é hora de focar em você, cuidar da sua mente e transformar seus resultados com a Kura.
+          Tudo certo com sua sessão. Agora é hora de focar em você, cuidar da sua mente e transformar seus resultados com o Kure.
         </p>
 
         <a
@@ -25,11 +25,11 @@ export default function AgradecimentoFinal() {
           className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white text-lg font-semibold px-6 py-4 rounded-xl shadow-lg transition-all"
         >
           <Rocket className="mr-2 w-5 h-5" />
-          Acessar o App Kura
+          Acessar o App Kure
         </a>
 
         <div className="text-sm text-gray-400 pt-6">
-          Dica: você também receberá um e-mail com o link de acesso. Salve nos favoritos 💚
+          Dica: você também receberá uma mensagem no whatsapp de nossa equipe com o link de acesso 💚
         </div>
 
         <div className="text-xs text-gray-500">
