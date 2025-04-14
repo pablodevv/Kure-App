@@ -1,108 +1,133 @@
-import React from "react";
-import { Button } from '../components/Button';
-import { CheckCircle, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react"
+import { Button } from '../components/Button'
+import { BookOpenText, CheckCircle, MessageCircle, Star, TimerReset } from "lucide-react"
+import { useNavigate } from "react-router-dom"
 
-export default function UpsellAutossabotagem() {
+export default function UpsellSeteTecnicas() {
+  const [timeLeft, setTimeLeft] = useState(600) // 10 minutos
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const formatTime = (seconds: number) => {
+    const m = Math.floor(seconds / 60)
+    const s = seconds % 60
+    return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
+  }
+
   const handleAccept = () => {
-    window.location.href = "https://kirvano.com";
-  };
+    window.location.href = "https://pay.kirvano.com/612a858a-f115-4dc3-9492-0df68971a759" // substitua pelo link real
+  }
 
-  const handleRefuse = () => {
-    window.location.href = "/obrigado";
-  };
+  const handleDecline = () => {
+    navigate("/obrigado")
+  }
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-10 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-2xl w-full"
-      >
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-pink-400">
-          Você está prestes a desbloquear sua transformação...
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 flex items-center justify-center px-4 py-12">
+      <div className="max-w-2xl w-full bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-12 text-center space-y-6 border border-gray-200 dark:border-gray-800">
+        <div className="flex justify-center items-center gap-2 text-pink-600 text-sm font-semibold uppercase tracking-wide">
+          <BookOpenText className="w-5 h-5" />
+          Oferta final exclusiva
+        </div>
+
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          Descubra as <span className="text-pink-500">7 Técnicas de Autossabotagem</span> que impedem seu emagrecimento
         </h1>
 
-        <p className="text-lg md:text-xl mb-6">
-          Mas antes, queremos te entregar algo que impede milhares de pessoas de emagrecer:
-          <span className="text-pink-300 font-semibold"> A autossabotagem.</span>
+        <p className="text-gray-600 dark:text-gray-300 text-lg">
+          Leitura rápida, direta ao ponto, com estratégias mentais para eliminar hábitos destrutivos, procrastinação e autoengano.
         </p>
 
-        <div className="bg-pink-950 rounded-2xl p-6 mb-6 text-left">
-          <h2 className="text-2xl font-semibold mb-2 text-pink-400">
-            📕 Ebook Exclusivo: 7 Técnicas de Autossabotagem que Impedem o Emagrecimento
-          </h2>
-          <ul className="list-none space-y-2">
-            <li className="flex items-start gap-2">
-              <CheckCircle className="text-green-400 mt-1" size={20} />
-              Identifique as armadilhas mentais que travam seu progresso
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="text-green-400 mt-1" size={20} />
-              Elimine hábitos inconscientes que sabotam sua dieta
-            </li>
-            <li className="flex items-start gap-2">
-              <CheckCircle className="text-green-400 mt-1" size={20} />
-              Técnicas práticas e aplicáveis em menos de 5 minutos por dia
-            </li>
-          </ul>
-          <p className="mt-4 text-xl font-bold text-yellow-400">
-            Tudo isso por apenas <span className="line-through text-white">R$29,90</span> R$7,90
-          </p>
+        <div className="text-center bg-pink-100 dark:bg-pink-800 text-pink-800 dark:text-pink-100 font-semibold px-4 py-3 rounded-xl text-sm flex items-center justify-center gap-2">
+          <TimerReset className="w-5 h-5" />
+          Oferta disponível por tempo limitado: <span className="ml-1 font-bold">{formatTime(timeLeft)}</span>
         </div>
 
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Clock className="text-yellow-400 animate-pulse" />
-          <p className="text-yellow-400 font-semibold">Oferta disponível pelos próximos <span id="countdown">5:00</span> minutos!</p>
-        </div>
-
-        <Button
-          onClick={handleAccept}
-          className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 text-lg rounded-2xl w-full mb-4 shadow-lg"
-        >
-          Sim! Quero desbloquear o ebook por R$7,90
-        </Button>
-
-        <button
-          onClick={handleRefuse}
-          className="text-sm text-gray-400 hover:text-white underline"
-        >
-          Não quero saber das técnicas que sabotam meu emagrecimento
-        </button>
-
-        <div className="mt-10 text-left">
-          <h3 className="text-lg font-semibold mb-2 text-pink-300">📣 O que dizem sobre o ebook:</h3>
-          <div className="space-y-4">
-            <blockquote className="bg-gray-900 rounded-xl p-4">
-              “Me vi em cada uma das técnicas. Parecia que foi escrito pra mim. Depois disso, parei de desistir no 3º dia da dieta.”<br />
-              <span className="text-sm text-gray-400">– Vanessa M.</span>
-            </blockquote>
-            <blockquote className="bg-gray-900 rounded-xl p-4">
-              “Achei que fosse só mais um ebook, mas mexeu real com minha cabeça. Vale muito mais do que R$7,90.”<br />
-              <span className="text-sm text-gray-400">– Carla R.</span>
-            </blockquote>
-            <blockquote className="bg-gray-900 rounded-xl p-4">
-              “Finalmente entendi por que sempre engordava de novo. As técnicas são simples e funcionam!”<br />
-              <span className="text-sm text-gray-400">– Juliana S.</span>
-            </blockquote>
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 md:p-6 space-y-4 text-left text-gray-700 dark:text-gray-300">
+          <div className="flex items-start gap-3">
+            <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
+            <div>
+              <p className="font-semibold">Identifique os sabotadores mentais</p>
+              <p className="text-sm">Entenda o que está travando seu progresso e como se livrar disso.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
+            <div>
+              <p className="font-semibold">Ferramentas práticas de reprogramação</p>
+              <p className="text-sm">Aplicação imediata para mudar seus padrões emocionais e comportamentais.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
+            <div>
+              <p className="font-semibold">E-book visual, rápido e objetivo</p>
+              <p className="text-sm">Ideal para quem quer resultado sem enrolação.</p>
+            </div>
+          </div>
+          <div className="pt-2">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Valor normal: R$ 27. Hoje, acesso imediato por apenas <span className="font-bold text-pink-600 dark:text-pink-300">R$ 7,90</span>
+            </p>
           </div>
         </div>
-      </motion.div>
 
-      <script dangerouslySetInnerHTML={{
-        __html: `
-          let countdown = 300;
-          const countdownEl = document.getElementById("countdown");
-          const interval = setInterval(() => {
-            const minutes = Math.floor(countdown / 60);
-            const seconds = countdown % 60;
-            countdownEl.textContent = \`\${minutes}:\${seconds.toString().padStart(2, '0')}\`;
-            countdown--;
-            if (countdown < 0) clearInterval(interval);
-          }, 1000);
-        `,
-      }} />
+        <div className="space-y-4">
+          <Button
+            onClick={handleAccept}
+            className="w-full bg-pink-600 hover:bg-pink-700 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
+          >
+            SIM! Quero o eBook por R$ 7,90 📘
+          </Button>
+
+          <button
+            onClick={handleDecline}
+            className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
+          >
+            Não, quero finalizar sem essa oferta
+          </button>
+        </div>
+
+        <div className="border-t pt-6 space-y-4">
+          <div className="text-left text-sm text-gray-600 dark:text-gray-400">
+            <div className="flex items-start gap-3">
+              <MessageCircle className="text-yellow-400 w-5 h-5 mt-1" />
+              <div>
+                <p className="italic">"Achei que fosse só mais um ebook… mas me identifiquei com TODAS as técnicas. Incrível como a gente se sabota sem perceber."</p>
+                <p className="text-xs mt-1">— Vanessa M., SP</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MessageCircle className="text-yellow-400 w-5 h-5 mt-1" />
+              <div>
+                <p className="italic">"Simples, direto e transformador. Esse material deveria vir antes de qualquer dieta."</p>
+                <p className="text-xs mt-1">— Rafael L., RJ</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <MessageCircle className="text-yellow-400 w-5 h-5 mt-1" />
+              <div>
+                <p className="italic">"Só com o que aprendi no tópico 3 já entendi porque eu sempre travava. Vale cada centavo."</p>
+                <p className="text-xs mt-1">— Julia S., MG</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center gap-1 text-yellow-400">
+            <Star className="w-5 h-5" />
+            <Star className="w-5 h-5" />
+            <Star className="w-5 h-5" />
+            <Star className="w-5 h-5" />
+            <Star className="w-5 h-5" />
+          </div>
+          <p className="text-xs text-gray-400 text-center">Garantia incondicional de 7 dias. Seu risco é zero.</p>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
