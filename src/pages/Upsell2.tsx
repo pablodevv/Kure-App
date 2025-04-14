@@ -3,6 +3,11 @@ import { Button } from '../components/Button'
 import { CheckCircle, Flame, TimerReset, Users, Star, Gift } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
+useEffect(() => {
+  // Rola a página para o topo sempre que ela for renderizada
+  window.scrollTo(0, 0);
+}, []);
+
 export default function UpsellPlano6Meses() {
   const [timeLeft, setTimeLeft] = useState(600)
   const navigate = useNavigate()
