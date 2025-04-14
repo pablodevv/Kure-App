@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { Button } from '../components/Button';
+import { Button } from '../components/Button'
 import { CheckCircle, Flame, TimerReset, Users, Star, Gift } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 export default function UpsellPlano6Meses() {
-  const [timeLeft, setTimeLeft] = useState(600) // 10 minutos
+  const [timeLeft, setTimeLeft] = useState(600)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -30,6 +30,7 @@ export default function UpsellPlano6Meses() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 flex flex-col items-center justify-start px-4 py-6">
+      
       {/* Barra de progresso */}
       <div className="w-full max-w-2xl mb-4">
         <div className="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
@@ -39,17 +40,18 @@ export default function UpsellPlano6Meses() {
       </div>
 
       <div className="max-w-2xl w-full bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-6 md:p-10 text-center space-y-6 border border-gray-200 dark:border-gray-800">
+        
         <div className="flex justify-center items-center gap-2 text-red-600 text-sm font-semibold uppercase tracking-wide">
-          <Flame className="w-5 h-5" />
+          <Flame className="w-5 h-5 animate-pulse" />
           Oferta Final Exclusiva
         </div>
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-          Prolongue seus resultados com <span className="text-red-500">6 meses + VIP</span>
+          Mantenha o corpo dos seus sonhos por <span className="text-red-500">6 meses + VIP</span>
         </h1>
 
         <p className="text-gray-600 dark:text-gray-300 text-lg">
-          Imagine onde você pode estar em 6 meses com sessões contínuas, apoio VIP no Telegram e bônus que transformam sua mente. Só agora: <strong>R$ 49,90</strong>.
+          Se você gostou do começo, imagine onde vai estar em 6 meses. Sessões contínuas, grupo VIP pra te apoiar, e bônus que aceleram sua transformação. Só hoje: <strong>R$ 49,90</strong>.
         </p>
 
         <div className="text-center bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-100 font-semibold px-4 py-3 rounded-xl text-sm flex items-center justify-center gap-2">
@@ -95,17 +97,32 @@ export default function UpsellPlano6Meses() {
           </div>
         </div>
 
-        <div className="bg-red-50 dark:bg-red-900 text-red-800 dark:text-red-200 p-4 rounded-xl text-sm text-left space-y-1 border border-red-200 dark:border-red-700">
-          <p>❌ Ficar sem o grupo VIP de apoio e motivação</p>
-          <p>❌ Não receber novas sessões mensais</p>
-          <p>❌ Perder o presente exclusivo disponível só agora</p>
+        {/* Comparativo visual */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="bg-green-50 dark:bg-green-900 p-4 rounded-xl border border-green-200 dark:border-green-700">
+            <p className="font-bold text-green-800 dark:text-green-200 mb-1">Com o Plano de 6 Meses:</p>
+            <ul className="list-disc list-inside space-y-1 text-green-700 dark:text-green-100">
+              <li>Grupo VIP te mantendo firme</li>
+              <li>Sessões novas pra manter a motivação</li>
+              <li>Presente surpresa exclusivo</li>
+            </ul>
+          </div>
+          <div className="bg-red-50 dark:bg-red-900 p-4 rounded-xl border border-red-200 dark:border-red-700">
+            <p className="font-bold text-red-800 dark:text-red-200 mb-1">Sem o Plano:</p>
+            <ul className="list-disc list-inside space-y-1 text-red-700 dark:text-red-100">
+              <li>Ficar sem motivação</li>
+              <li>Perder sessões novas e presentes</li>
+              <li>Resultados mais lentos</li>
+            </ul>
+          </div>
         </div>
 
+        {/* Call to action */}
         <Button
           onClick={handleAccept}
           className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all animate-pulse"
         >
-          SIM! Quero garantir meus 6 meses + bônus 🔒
+          SIM! Quero continuar emagrecendo com apoio e sessões VIP! 🔒
         </Button>
 
         <button
@@ -115,17 +132,19 @@ export default function UpsellPlano6Meses() {
           Não quero garantir meus resultados a longo prazo
         </button>
 
-        <div className="text-xs text-gray-400 pt-6">
-          Garantia de reembolso incondicional em até 7 dias. Zero risco.
+        {/* Selo de garantia */}
+        <div className="flex flex-col items-center mt-6">
+          <img src="/garantia.png" alt="Garantia de 7 dias" className="w-24 h-auto" />
+          <p className="text-xs text-gray-400 pt-2 text-center">Garantia de reembolso incondicional em até 7 dias. Zero risco.</p>
         </div>
 
-        {/* Depoimento */}
-        <div className="mt-6 text-left">
+        {/* Depoimentos */}
+        <div className="mt-8 text-left">
           <h3 className="text-md font-semibold text-gray-800 dark:text-gray-200 mb-2">O que dizem nossos usuários:</h3>
           <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow text-sm text-gray-700 dark:text-gray-300 space-y-2">
-            <p>“Entrei no grupo VIP e as mensagens me mantêm firme todos os dias. Já eliminei 8kg em 2 meses.” <span className="font-semibold">— Juliana, 34</span></p>
-            <p>“Essa sessão da autoestima mexeu comigo de um jeito muito positivo. Valeu cada centavo.” <span className="font-semibold">— Camila, 28</span></p>
-            <p>“As sessões novas todo mês me mantêm motivada e conectada com meu objetivo.” <span className="font-semibold">— Patricia, 41</span></p>
+            <p><em>“Entrei no grupo VIP e as mensagens me mantêm firme todos os dias. Já eliminei 8kg em 2 meses.”</em> <span className="font-semibold">— Juliana, 34</span></p>
+            <p><em>“Essa sessão da autoestima mexeu comigo de um jeito muito positivo. Valeu cada centavo.”</em> <span className="font-semibold">— Camila, 28</span></p>
+            <p><em>“As sessões novas todo mês me mantêm motivada e conectada com meu objetivo.”</em> <span className="font-semibold">— Patricia, 41</span></p>
           </div>
         </div>
 
