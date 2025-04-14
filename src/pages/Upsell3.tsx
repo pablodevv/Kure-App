@@ -4,14 +4,19 @@ import { CheckCircle, Brain, TimerReset } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 
-useEffect(() => {
-  // Rola a página para o topo sempre que ela for renderizada
-  window.scrollTo(0, 0);
-}, []);
 
 export default function UpsellMenteBlindada() {
   const [timeLeft, setTimeLeft] = useState(600) // 10 minutos
   const navigate = useNavigate()
+
+
+
+  
+useEffect(() => {
+  // Rola a página para o topo sempre que ela for renderizada
+  window.scrollTo(0, 0);
+}, []);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
