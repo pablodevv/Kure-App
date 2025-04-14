@@ -4,7 +4,6 @@ import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
 export default function UpsellMetabolismo() {
   const [timeLeft, setTimeLeft] = useState(600)
 
-  // Contador regressivo
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
@@ -12,34 +11,18 @@ export default function UpsellMetabolismo() {
     return () => clearInterval(interval)
   }, [])
 
-  // Carregando os scripts da Kirvano de forma correta
-  useEffect(() => {
-    const scriptVars = document.createElement("script")
-    scriptVars.innerHTML = `
-      var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-      var nextPageURL = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba";
-      var refusePageURL = "https://kure-app.netlify.app/upsell2";
-    `
-    document.body.appendChild(scriptVars)
-
-    const scriptMain = document.createElement("script")
-    scriptMain.src = "https://snippets.kirvano.com/upsell.min.js"
-    scriptMain.async = true
-    scriptMain.onload = () => {
-      console.log("Script Kirvano carregado e pronto para funcionar!")
-    }
-    document.body.appendChild(scriptMain)
-
-    return () => {
-      document.body.removeChild(scriptVars)
-      document.body.removeChild(scriptMain)
-    }
-  }, [])
-
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60)
     const s = seconds % 60
     return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`
+  }
+
+  const handleAccept = () => {
+    window.location.href = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba"
+  }
+
+  const handleRefuse = () => {
+    window.location.href = "/upsell2"
   }
 
   return (
@@ -108,14 +91,16 @@ export default function UpsellMetabolismo() {
 
         {/* Botão de Aceite */}
         <button
-          className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
+          onClick={handleAccept}
+          className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
         >
           SIM! Quero ativar meu metabolismo agora 🔥
         </button>
 
         {/* Botão de Recusa */}
         <button
-          className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
+          onClick={handleRefuse}
+          className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
         >
           Não quero acelerar meus resultados agora
         </button>
