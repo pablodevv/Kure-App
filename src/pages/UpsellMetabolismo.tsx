@@ -5,7 +5,6 @@ import { Button } from '../components/Button';
 export default function UpsellMetabolismo() {
   const [timeLeft, setTimeLeft] = useState(600)
 
-  // ⏱️ Contador regressivo
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
@@ -13,26 +12,25 @@ export default function UpsellMetabolismo() {
     return () => clearInterval(interval)
   }, [])
 
-  // 💥 Script da Kirvano
   useEffect(() => {
-    const scriptVars = document.createElement("script")
-    scriptVars.innerHTML = `
-      window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-      window.nextPageURL = "https://kure-app.netlify.app/upsell2";
-      window.refusePageURL = "https://kure-app.netlify.app/upsell2";
-    `
+    // Damos 500ms pro DOM montar antes de injetar os scripts
+    const timeout = setTimeout(() => {
+      const scriptVars = document.createElement("script")
+      scriptVars.innerHTML = `
+        window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+        window.nextPageURL = "https://kure-app.netlify.app/upsell2";
+        window.refusePageURL = "https://kure-app.netlify.app/upsell2";
+      `
 
-    const scriptKirvano = document.createElement("script")
-    scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
-    scriptKirvano.async = true
+      const scriptKirvano = document.createElement("script")
+      scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
+      scriptKirvano.async = true
 
-    document.body.appendChild(scriptVars)
-    document.body.appendChild(scriptKirvano)
+      document.body.appendChild(scriptVars)
+      document.body.appendChild(scriptKirvano)
+    }, 500)
 
-    return () => {
-      document.body.removeChild(scriptVars)
-      document.body.removeChild(scriptKirvano)
-    }
+    return () => clearTimeout(timeout)
   }, [])
 
   const formatTime = (seconds: number) => {
@@ -105,14 +103,14 @@ export default function UpsellMetabolismo() {
           </div>
         </div>
 
-        {/* ✅ Botão de Aceite */}
+        {/* Botão de Aceite */}
         <button
           className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
         >
           SIM! Quero ativar meu metabolismo agora 🔥
         </button>
 
-        {/* ❌ Botão de Recusa */}
+        {/* Botão de Recusa */}
         <button
           className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
         >
