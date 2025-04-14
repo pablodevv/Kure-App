@@ -133,10 +133,11 @@ export default function UpsellPlano6Meses() {
         </button>
 
         {/* Selo de garantia */}
-        <div className="flex flex-col items-center mt-6">
-          <img src="/garantia.png" alt="Garantia de 7 dias" className="w-24 h-auto" />
-          <p className="text-xs text-gray-400 pt-2 text-center">Garantia de reembolso incondicional em até 7 dias. Zero risco.</p>
-        </div>
+        <div className="mt-6 border border-green-500 rounded-xl p-4 bg-green-50 dark:bg-green-900 text-green-800 dark:text-green-100 text-sm flex items-center gap-3">
+  <CheckCircle className="w-5 h-5 text-green-500" />
+  Garantia incondicional de 7 dias: se não sentir resultado, devolvemos 100% do seu dinheiro.
+</div>
+
 
         {/* Depoimentos */}
         <div className="mt-8 text-left">
