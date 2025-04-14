@@ -33,6 +33,10 @@ export default function UpsellMetabolismo() {
           Oferta Secreta Exclusiva
         </div>
 
+        <div className="inline-block bg-yellow-200 dark:bg-yellow-700 text-yellow-800 dark:text-yellow-100 text-xs font-semibold px-3 py-1 rounded-full">
+          + de 1.200 clientes escolheram essa sessão
+        </div>
+
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
           Ative seu Metabolismo com <span className="text-red-500">Hipnose Profunda</span>
         </h1>
@@ -49,7 +53,7 @@ export default function UpsellMetabolismo() {
         </div>
 
         <div className="text-sm text-red-500 font-semibold">
-          Apenas 37 acessos disponíveis hoje
+          Apenas 17 acessos disponíveis hoje
         </div>
 
         <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 md:p-6 space-y-4 text-left text-gray-700 dark:text-gray-300">
@@ -79,12 +83,27 @@ export default function UpsellMetabolismo() {
           </p>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-2 text-sm text-gray-700 dark:text-gray-300">
+        {/* Depoimentos */}
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-4 text-sm text-gray-700 dark:text-gray-300">
           <div className="flex items-center gap-2">
             <UserCircle2 className="w-6 h-6 text-gray-400" />
             <div>
               <p className="font-semibold">Juliana R. • SP</p>
               <p>“Essa sessão realmente mudou meu ritmo. Em poucos dias, já senti mais energia e menos fome à noite.”</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <UserCircle2 className="w-6 h-6 text-gray-400" />
+            <div>
+              <p className="font-semibold">Fernanda M. • RJ</p>
+              <p>“Senti diferença logo na primeira noite. Dormi melhor e não levantei querendo comer.”</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <UserCircle2 className="w-6 h-6 text-gray-400" />
+            <div>
+              <p className="font-semibold">Carla T. • MG</p>
+              <p>“Essa combinação de sessões me deu mais controle do que qualquer dieta que já tentei.”</p>
             </div>
           </div>
         </div>
@@ -94,13 +113,20 @@ export default function UpsellMetabolismo() {
           onClick={handleAccept}
           className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
         >
-          SIM! Quero ativar meu metabolismo agora 🔥
+          SIM! Quero ativar meu metabolismo e ter mais controle ainda hoje 🔥
         </button>
+
+        {/* Bullets de reforço */}
+        <ul className="text-xs text-gray-500 dark:text-gray-400 mt-4 space-y-1">
+          <li>✅ Resultados visíveis em poucos dias</li>
+          <li>🔒 Garantia total: se não amar, devolvemos seu dinheiro</li>
+          <li>💤 Use antes de dormir, sem esforço</li>
+        </ul>
 
         {/* Botão de Recusa */}
         <button
           onClick={handleRefuse}
-          className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
+          className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-4"
         >
           Não quero acelerar meus resultados agora
         </button>
