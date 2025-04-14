@@ -46,21 +46,21 @@ const weeklyPlan = [
 
 const testimonials = [
   {
-    date: '2024 Jun 27',
+    date: '27 Jun 2024',
     rating: 5,
     text: 'O Kure transformou minha nutrição de uma maneira que eu não poderia imaginar. Recomendo para qualquer pessoa que busca um "hack" efetivo e duradouro para perda de peso.',
     author: 'João K.',
     verified: true
   },
   {
-    date: '2024 Jun 24',
+    date: '24 Jun 2024',
     rating: 5,
     text: 'Super satisfeita. Me livrei do vício em açúcar. As sessões antes de dormir se tornaram meu ritual noturno de relaxamento e pensamento positivo.',
     author: 'Laura S.',
     verified: true
   },
   {
-    date: '2024 Jun 19',
+    date: '19 Jun 2024',
     rating: 5,
     text: 'Experiência fenomenal. A hipnose do Kure desbloqueou uma nova versão de mim. Manter uma nutrição saudável agora é natural.',
     author: 'Eliza D.',
@@ -376,7 +376,7 @@ export default function Summary() {
 
       <footer className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex justify-between items-center text-sm text-gray-400">
-          <p>© 2024 Kure. Todos os direitos reservados.</p>
+          <p>© 2025 Kure. Todos os direitos reservados.</p>
           <p>Aviso: Os resultados podem variar de pessoa para pessoa</p>
         </div>
       </footer>
