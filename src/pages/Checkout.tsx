@@ -137,13 +137,28 @@ export default function Checkout() {
       isOpen: false
     },
     {
-      question: 'Como posso cancelar meu plano?',
+      question: 'Como posso cancelar ou pedir suporte?',
       answer: 'Os cancelamentos são tratados diretamente pela Apple e podem ser solicitados usando as instruções aqui. Se você ainda tiver dúvidas sobre como cancelar seu plano, entre em contato conosco em suporte@kureapp.com.br',
       isOpen: false
     },
     {
       question: 'É seguro usar auto-hipnose?',
-      answer: 'A auto-hipnoterapia é um procedimento completamente seguro.',
+      answer: 'Sim! A auto-hipnoterapia é um método cientificamente validado e completamente seguro. Todas as sessões foram desenvolvidas por especialistas e seguem protocolos testados para proporcionar resultados profundos com conforto e segurança.',
+      isOpen: false
+    },
+    {
+      question: 'O pagamento é único ou assinatura mensal?',
+      answer: 'O pagamento é único, sem cobranças futuras ou taxas escondidas. Você paga apenas uma vez pelo plano escolhido (7 dias, 1 mês ou 3 meses) e tem acesso completo ao conteúdo do programa. Não é assinatura, e você pode usar o app com tranquilidade.',
+      isOpen: false
+    },
+    {
+      question: 'A compra é segura?',
+      answer: 'Totalmente! Utilizamos plataformas de pagamento 100% seguras com criptografia avançada, as mesmas usadas por grandes lojas online. Além disso, você conta com garantia incondicional de reembolso, caso decida que o Kure não é pra você.',
+      isOpen: false
+    },
+    {
+      question: 'Preciso saber algo técnico pra usar o Kure?',
+      answer: 'Nada disso! O app foi feito pra ser usado de forma simples e intuitiva. Em poucos cliques, você já começa sua transformação.',
       isOpen: false
     },
     {
