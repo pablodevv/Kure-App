@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from '../components/Button';
 import { CheckCircle, Flame, TimerReset } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
