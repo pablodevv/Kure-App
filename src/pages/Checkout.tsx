@@ -66,21 +66,21 @@ const features = [
 const reviews = [
   {
     name: 'Júlia R.',
-    date: '2024 Jun 27',
+    date: '27 Jun 2024',
     text: 'Kure mudou meu corpo de maneiras que eu não poderia imaginar. Recomendo para todas as garotas que procuram algo diferente que realmente funciona!',
     image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_1.82f0a538.png&w=750&q=75',
     stars: 5
   },
   {
     name: 'José S.',
-    date: '2024 Jun 24',
+    date: '24 Jun 2024',
     text: 'Finalmente parei de comer compulsivamente e comecei a me exercitar. Kure foi a única coisa que funcionou para mim.',
     image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_2.309d2518.png&w=750&q=75',
     stars: 5
   },
   {
     name: 'Simone G.',
-    date: '2024 Jun 19',
+    date: '19 Jun 2024',
     text: 'Experiência fenomenal. O app Kure é a principal razão por trás da minha mudança. Ser saudável agora é tão fácil, vem naturalmente.',
     image: 'https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcustomer_item_3.6d5340ab.png&w=750&q=75',
     stars: 5
