@@ -34,15 +34,15 @@ export default function DownsellSessaoUnica() {
 
         <div className="flex justify-center items-center gap-2 text-indigo-600 text-sm font-semibold uppercase tracking-wide">
           <Brain className="w-5 h-5" />
-          Oferta Final Especial
+          Oferta Final Exclusiva
         </div>
 
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white leading-snug">
-          Se só <span className="text-indigo-500">uma única coisa</span> pudesse te ajudar agora…
+          E se <span className="text-indigo-500">uma única ação</span> pudesse te ajudar a mudar tudo agora?
         </h1>
 
         <p className="text-gray-600 dark:text-gray-300 text-lg">
-          Escolha uma sessão única que pode transformar seu momento atual.
+          Escolha uma sessão única que pode transformar sua mente e seus resultados. Seu momento é agora!
         </p>
 
         <div className="text-center bg-indigo-100 dark:bg-indigo-800 text-indigo-800 dark:text-indigo-100 font-semibold px-4 py-3 rounded-xl text-sm flex items-center justify-center gap-2">
@@ -55,7 +55,7 @@ export default function DownsellSessaoUnica() {
             <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
             <div>
               <p className="font-semibold">Sessão de Autoestima</p>
-              <p className="text-sm">Fortaleça sua confiança e a imagem que você tem de si.</p>
+              <p className="text-sm">Fortaleça sua confiança e construa uma imagem mais positiva de si mesmo.</p>
             </div>
           </div>
 
@@ -63,14 +63,14 @@ export default function DownsellSessaoUnica() {
             <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
             <div>
               <p className="font-semibold">OU Sessão de Ansiedade</p>
-              <p className="text-sm">Acalme sua mente e volte ao controle mesmo em momentos difíceis.</p>
+              <p className="text-sm">Acalme sua mente e recupere o controle emocional em momentos de estresse.</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
             <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
             <div>
-              <p className="font-semibold">Só R$ 9,90</p>
+              <p className="font-semibold">Por apenas R$ 9,90</p>
               <p className="text-sm line-through text-gray-400">De R$ 29,90 por tempo limitado</p>
             </div>
           </div>
@@ -80,18 +80,18 @@ export default function DownsellSessaoUnica() {
           onClick={handleAccept}
           className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
         >
-          SIM! Quero essa sessão por R$ 9,90 💜
+          SIM! Quero essa transformação por apenas R$ 9,90 💜
         </Button>
 
         <button
           onClick={handleDecline}
           className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
         >
-          Não preciso de nenhuma ajuda extra agora
+          Não preciso dessa ajuda agora
         </button>
 
         <div className="text-xs text-gray-400 pt-6">
-          Garantia total de 7 dias. Risco zero. A escolha é sua 💡
+          Garantia total de 7 dias. Seu risco é zero. A escolha é sua 💡
         </div>
       </div>
     </div>
