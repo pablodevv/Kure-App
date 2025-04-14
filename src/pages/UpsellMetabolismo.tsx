@@ -76,10 +76,11 @@ export default function UpsellMetabolismo() {
         </div>
 <Button
   onClick={handleAccept}
-  className="w-full bg-red-500 hover:bg-red-600 text-white text-lg md:text-xl font-semibold py-4 rounded-xl shadow-xl transition-all"
+  className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
 >
   SIM! Quero ativar meu metabolismo agora 🔥
 </Button>
+
 
 
         <button
