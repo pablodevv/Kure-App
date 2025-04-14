@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
+import { Button } from '../components/Button';
 
 export default function UpsellMetabolismo() {
   const [timeLeft, setTimeLeft] = useState(600)
 
+  // ⏱️ Contador regressivo
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
@@ -11,23 +13,25 @@ export default function UpsellMetabolismo() {
     return () => clearInterval(interval)
   }, [])
 
+  // 💥 Script da Kirvano
   useEffect(() => {
-    const script1 = document.createElement("script")
-    script1.innerHTML = `
-      var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-      var nextPageURL = "https://kure-app.netlify.app/upsell2";
-      var refusePageURL = "https://kure-app.netlify.app/upsell2";
+    const scriptVars = document.createElement("script")
+    scriptVars.innerHTML = `
+      window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+      window.nextPageURL = "https://kure-app.netlify.app/upsell2";
+      window.refusePageURL = "https://kure-app.netlify.app/upsell2";
     `
-    const script2 = document.createElement("script")
-    script2.src = "https://snippets.kirvano.com/upsell.min.js"
-    script2.async = true
 
-    document.body.appendChild(script1)
-    document.body.appendChild(script2)
+    const scriptKirvano = document.createElement("script")
+    scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
+    scriptKirvano.async = true
+
+    document.body.appendChild(scriptVars)
+    document.body.appendChild(scriptKirvano)
 
     return () => {
-      document.body.removeChild(script1)
-      document.body.removeChild(script2)
+      document.body.removeChild(scriptVars)
+      document.body.removeChild(scriptKirvano)
     }
   }, [])
 
@@ -40,7 +44,6 @@ export default function UpsellMetabolismo() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 flex items-center justify-center px-4 py-12">
       <div className="max-w-2xl w-full bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-12 text-center space-y-6 border border-gray-200 dark:border-gray-800">
-        
         <div className="flex justify-center items-center gap-2 text-red-600 text-sm font-semibold uppercase tracking-wide">
           <Flame className="w-5 h-5" />
           Oferta Secreta Exclusiva
@@ -92,7 +95,6 @@ export default function UpsellMetabolismo() {
           </p>
         </div>
 
-        {/* Prova Social */}
         <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-2 text-sm text-gray-700 dark:text-gray-300">
           <div className="flex items-center gap-2">
             <UserCircle2 className="w-6 h-6 text-gray-400" />
@@ -103,18 +105,14 @@ export default function UpsellMetabolismo() {
           </div>
         </div>
 
-        {/* Botão de Aceite com Kirvano */}
+        {/* ✅ Botão de Aceite */}
         <button
           className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
         >
           SIM! Quero ativar meu metabolismo agora 🔥
         </button>
 
-        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-          Essa pequena decisão pode transformar seus resultados nos próximos dias.
-        </p>
-
-        {/* Botão de Recusa com Kirvano */}
+        {/* ❌ Botão de Recusa */}
         <button
           className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
         >
