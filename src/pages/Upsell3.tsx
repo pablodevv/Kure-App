@@ -102,6 +102,12 @@ export default function UpsellMenteBlindada() {
         <div className="text-xs text-gray-400 pt-6">
           Garantia total de reembolso em 7 dias. Seu risco é zero.
         </div>
+
+        {/* Prova Social */}
+        <div className="mt-6 border border-green-500 rounded-xl p-4 bg-green-50 dark:bg-green-900 text-green-800 dark:text-green-100 text-sm flex items-center gap-3">
+          <CheckCircle className="w-5 h-5 text-green-500" />
+          Garantia incondicional de 7 dias: se não sentir resultado, devolvemos 100% do seu dinheiro.
+        </div>
       </div>
     </div>
   )
