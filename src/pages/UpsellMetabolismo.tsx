@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
-import { Button } from '../components/Button';
 
 export default function UpsellMetabolismo() {
   const [timeLeft, setTimeLeft] = useState(600)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,28 +13,43 @@ export default function UpsellMetabolismo() {
   }, [])
 
   useEffect(() => {
-  // Garante que não tenha script duplicado
-  document.querySelectorAll('script[src="https://snippets.kirvano.com/upsell.min.js"]').forEach((el) => el.remove())
+    // Remove scripts antigos da Kirvano se houver
+    document.querySelectorAll('script[src="https://snippets.kirvano.com/upsell.min.js"]').forEach((el) => el.remove())
 
-  const timeout = setTimeout(() => {
-    const scriptVars = document.createElement("script")
-    scriptVars.innerHTML = `
-      window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-      window.nextPageURL = "https://kure-app.netlify.app/upsell2";
-      window.refusePageURL = "https://kure-app.netlify.app/upsell2";
-    `
+    // Observa quando os botões aparecem no DOM
+    const observer = new MutationObserver(() => {
+      const acceptBtn = document.querySelector('.kirvano-payment-trigger')
+      const refuseBtn = document.querySelector('.kirvano-refuse-trigger')
 
-    const scriptKirvano = document.createElement("script")
-    scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
-    scriptKirvano.async = true
+      if (acceptBtn && refuseBtn) {
+        // Agora que os botões estão no DOM, injeta os scripts
+        const scriptVars = document.createElement("script")
+        scriptVars.innerHTML = `
+          window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+          window.nextPageURL = "https://kure-app.netlify.app/upsell2";
+          window.refusePageURL = "https://kure-app.netlify.app/upsell2";
+        `
 
-    document.body.appendChild(scriptVars)
-    document.body.appendChild(scriptKirvano)
-  }, 1500)
+        const scriptKirvano = document.createElement("script")
+        scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
+        scriptKirvano.async = true
 
-  return () => clearTimeout(timeout)
-}, [])
+        document.body.appendChild(scriptVars)
+        document.body.appendChild(scriptKirvano)
 
+        observer.disconnect() // Para de observar
+      }
+    })
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current, {
+        childList: true,
+        subtree: true,
+      })
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60)
@@ -44,7 +59,7 @@ export default function UpsellMetabolismo() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 flex items-center justify-center px-4 py-12">
-      <div className="max-w-2xl w-full bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-12 text-center space-y-6 border border-gray-200 dark:border-gray-800">
+      <div ref={containerRef} className="max-w-2xl w-full bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-12 text-center space-y-6 border border-gray-200 dark:border-gray-800">
         <div className="flex justify-center items-center gap-2 text-red-600 text-sm font-semibold uppercase tracking-wide">
           <Flame className="w-5 h-5" />
           Oferta Secreta Exclusiva
