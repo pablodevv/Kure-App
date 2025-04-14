@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Summary from './pages/Summary';
 import Checkout from './pages/Checkout';
+import UpsellMetabolismo from './pages/UpsellMetabolismo';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/summary" element={<Summary />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/upsell1" element={<UpsellMetabolismo />} />
       </Routes>
     </Router>
   );
