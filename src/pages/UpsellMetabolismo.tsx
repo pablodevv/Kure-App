@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from '../components/Button';
-import { CheckCircle, Flame, TimerReset } from "lucide-react"
+import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 export default function UpsellMetabolismo() {
   const [timeLeft, setTimeLeft] = useState(600) // 10 minutos
   const navigate = useNavigate()
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,6 +52,10 @@ export default function UpsellMetabolismo() {
           <span className="ml-1 font-bold">{formatTime(timeLeft)}</span>
         </div>
 
+        <div className="text-sm text-red-500 font-semibold">
+          Apenas 37 acessos disponíveis hoje
+        </div>
+
         <div className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 md:p-6 space-y-4 text-left text-gray-700 dark:text-gray-300">
           <div className="flex items-start gap-3">
             <CheckCircle className="text-green-500 w-6 h-6 mt-1" />
@@ -73,15 +78,33 @@ export default function UpsellMetabolismo() {
               <p className="text-sm line-through text-gray-400">De R$ 39,90 por tempo limitado</p>
             </div>
           </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Valor estimado total: <span className="line-through">R$ 89,90</span> — Hoje por <span className="text-green-500 font-bold">R$ 17,90</span>
+          </p>
         </div>
-<Button
-  onClick={handleAccept}
-  className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
->
-  SIM! Quero ativar meu metabolismo agora 🔥
-</Button>
 
+        {/* Prova Social */}
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-2 text-sm text-gray-700 dark:text-gray-300">
+          <div className="flex items-center gap-2">
+            <UserCircle2 className="w-6 h-6 text-gray-400" />
+            <div>
+              <p className="font-semibold">Juliana R. • SP</p>
+              <p>“Essa sessão realmente mudou meu ritmo. Em poucos dias, já senti mais energia e menos fome à noite.”</p>
+            </div>
+          </div>
+        </div>
 
+        <Button
+          ref={buttonRef}
+          onClick={handleAccept}
+          className="w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
+        >
+          SIM! Quero ativar meu metabolismo agora 🔥
+        </Button>
+
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+          Essa pequena decisão pode transformar seus resultados nos próximos dias.
+        </p>
 
         <button
           onClick={handleDecline}
