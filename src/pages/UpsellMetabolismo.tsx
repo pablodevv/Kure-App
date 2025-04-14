@@ -30,24 +30,7 @@ export default function UpsellMetabolismo() {
     document.body.appendChild(scriptVars)
     document.body.appendChild(scriptKirvano)
 
-    // Garantir que os botões de ação se conectem assim que os scripts carregarem
-    scriptKirvano.onload = () => {
-      // Agora que os scripts estão carregados, inicializa os botões
-      const acceptBtn = document.querySelector(".kirvano-payment-trigger")
-      const refuseBtn = document.querySelector(".kirvano-refuse-trigger")
-
-      if (acceptBtn && refuseBtn) {
-        acceptBtn.addEventListener("click", () => {
-          // Ação do botão de aceite
-          window.location.href = window.nextPageURL
-        })
-        
-        refuseBtn.addEventListener("click", () => {
-          // Ação do botão de recusa
-          window.location.href = window.refusePageURL
-        })
-      }
-    }
+   
   }, [])
 
   const formatTime = (seconds: number) => {
