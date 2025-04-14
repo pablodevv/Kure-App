@@ -22,7 +22,7 @@ export default function UpsellMetabolismo() {
   }
 
   const handleAccept = () => {
-    window.location.href = "https://kirvano.com"
+    window.location.href = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba"
   }
 
   const handleDecline = () => {
