@@ -13,25 +13,28 @@ export default function UpsellMetabolismo() {
   }, [])
 
   useEffect(() => {
-    // Damos 500ms pro DOM montar antes de injetar os scripts
-    const timeout = setTimeout(() => {
-      const scriptVars = document.createElement("script")
-      scriptVars.innerHTML = `
-        window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-        window.nextPageURL = "https://kure-app.netlify.app/upsell2";
-        window.refusePageURL = "https://kure-app.netlify.app/upsell2";
-      `
+  // Garante que não tenha script duplicado
+  document.querySelectorAll('script[src="https://snippets.kirvano.com/upsell.min.js"]').forEach((el) => el.remove())
 
-      const scriptKirvano = document.createElement("script")
-      scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
-      scriptKirvano.async = true
+  const timeout = setTimeout(() => {
+    const scriptVars = document.createElement("script")
+    scriptVars.innerHTML = `
+      window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+      window.nextPageURL = "https://kure-app.netlify.app/upsell2";
+      window.refusePageURL = "https://kure-app.netlify.app/upsell2";
+    `
 
-      document.body.appendChild(scriptVars)
-      document.body.appendChild(scriptKirvano)
-    }, 500)
+    const scriptKirvano = document.createElement("script")
+    scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
+    scriptKirvano.async = true
 
-    return () => clearTimeout(timeout)
-  }, [])
+    document.body.appendChild(scriptVars)
+    document.body.appendChild(scriptKirvano)
+  }, 1500)
+
+  return () => clearTimeout(timeout)
+}, [])
+
 
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60)
