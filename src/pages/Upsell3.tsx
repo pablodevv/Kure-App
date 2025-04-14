@@ -25,7 +25,7 @@ export default function UpsellMenteBlindada() {
   }
 
   const handleDecline = () => {
-    navigate("/upsell-final")
+    navigate("/downsell2")
   }
 
   return (
