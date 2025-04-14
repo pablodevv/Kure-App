@@ -12,22 +12,41 @@ export default function UpsellMetabolismo() {
   }, [])
 
   useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src="https://snippets.kirvano.com/upsell.min.js"]'
-    )
-    if (!existingScript) {
-      const kirvanoVars = document.createElement("script")
-      kirvanoVars.innerHTML = `
-        var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-        var nextPageURL = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba";
-        var refusePageURL = "https://kure-app.netlify.app/upsell2";
-      `
-      document.body.appendChild(kirvanoVars)
+    // Remove scripts antigos da Kirvano se houver
+    document.querySelectorAll('script[src="https://snippets.kirvano.com/upsell.min.js"]').forEach((el) => el.remove())
 
-      const kirvanoScript = document.createElement("script")
-      kirvanoScript.src = "https://snippets.kirvano.com/upsell.min.js"
-      kirvanoScript.async = true
-      document.body.appendChild(kirvanoScript)
+    // Injeta os scripts corretamente
+    const scriptVars = document.createElement("script")
+    scriptVars.innerHTML = `
+      window.offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+      window.nextPageURL = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba";
+      window.refusePageURL = "https://kure-app.netlify.app/upsell2";
+    `
+
+    const scriptKirvano = document.createElement("script")
+    scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
+    scriptKirvano.async = true
+
+    document.body.appendChild(scriptVars)
+    document.body.appendChild(scriptKirvano)
+
+    // Garantir que os botões de ação se conectem assim que os scripts carregarem
+    scriptKirvano.onload = () => {
+      // Agora que os scripts estão carregados, inicializa os botões
+      const acceptBtn = document.querySelector(".kirvano-payment-trigger")
+      const refuseBtn = document.querySelector(".kirvano-refuse-trigger")
+
+      if (acceptBtn && refuseBtn) {
+        acceptBtn.addEventListener("click", () => {
+          // Ação do botão de aceite
+          window.location.href = window.nextPageURL
+        })
+        
+        refuseBtn.addEventListener("click", () => {
+          // Ação do botão de recusa
+          window.location.href = window.refusePageURL
+        })
+      }
     }
   }, [])
 
@@ -102,12 +121,16 @@ export default function UpsellMetabolismo() {
         </div>
 
         {/* Botão de Aceite */}
-        <button className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all">
+        <button
+          className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
+        >
           SIM! Quero ativar meu metabolismo agora 🔥
         </button>
 
         {/* Botão de Recusa */}
-        <button className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2">
+        <button
+          className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
+        >
           Não quero acelerar meus resultados agora
         </button>
 
