@@ -25,7 +25,7 @@ export default function UpsellMetabolismo() {
   }
 
   const handleDecline = () => {
-    navigate("/upsell-2")
+    navigate("/upsell2")
   }
 
   return (
