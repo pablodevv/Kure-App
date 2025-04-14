@@ -21,7 +21,7 @@ export default function UpsellPlano6Meses() {
   }
 
   const handleAccept = () => {
-    window.location.href = "https://kirvano.com"
+    window.location.href = "https://pay.kirvano.com/26df8429-9f3c-4f1e-80bf-41240a905dc5"
   }
 
   const handleDecline = () => {
