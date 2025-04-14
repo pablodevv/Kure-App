@@ -9,7 +9,7 @@ export default function UpsellMetabolismo() {
 useEffect(() => {
   // Rola a página para o topo sempre que ela for renderizada
   window.scrollTo(0, 0);
-   document.documentElement.classList.add('dark')
+   document.documentElement.classList.add('dark');
 }, []);
 
   
