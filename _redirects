@@ -1,0 +1,7 @@
+# Redirecionar qualquer página que não seja /upsell1 para o início do funil
+/quiz    /           301
+/summary /           301
+/checkout /         /           301
+
+# Permitir que /upsell1 seja acessado diretamente
+/upsell1  /upsell1  200
