@@ -21,7 +21,7 @@ export default function DownsellRenovacao3Meses() {
   }
 
   const handleAccept = () => {
-    window.location.href = "https://kirvano.com/renovacao-3-meses"
+    window.location.href = "https://pay.kirvano.com/3720103f-8426-4c7c-8ae7-c0b4f45ea75e"
   }
 
   const handleDecline = () => {
