@@ -21,7 +21,7 @@ export default function DownsellSessaoUnica() {
   }
 
   const handleAccept = () => {
-    window.location.href = "https://kureapp.com/checkout-sessao-unica"
+    window.location.href = "https://pay.kirvano.com/301f8398-6094-4973-9391-10e329907aba"
   }
 
   const handleDecline = () => {
