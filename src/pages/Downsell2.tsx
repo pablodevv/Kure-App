@@ -25,7 +25,7 @@ export default function DownsellSessaoUnica() {
   }
 
   const handleDecline = () => {
-    navigate("/fim") // pode ser a tela final do funil
+    navigate("/Obrigado") // pode ser a tela final do funil
   }
 
   return (
