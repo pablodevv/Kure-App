@@ -25,7 +25,7 @@ export default function UpsellPlano6Meses() {
   }
 
   const handleDecline = () => {
-    navigate("/fim")
+    navigate("/downsell1")
   }
 
   return (
