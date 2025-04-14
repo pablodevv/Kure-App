@@ -6,6 +6,7 @@ import Checkout from './pages/Checkout';
 import UpsellMetabolismo from './pages/UpsellMetabolismo';
 import Upsell2 from './pages/Upsell2';
 import Downsell1 from './pages/Downsell1';
+import Upsell3 from './pages/Upsell3';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/upsell1" element={<UpsellMetabolismo />} />
         <Route path="/Upsell2" element={<Upsell2 />} />
         <Route path="/downsell1" element={<Downsell1 />} />
+        <Route path="/Upsell3" element={<Upsell3 />} />
       </Routes>
     </Router>
   );
