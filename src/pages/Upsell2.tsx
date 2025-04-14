@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from '../components/Button';
 
 const UpsellPage = () => {
   // Timer para urgência
