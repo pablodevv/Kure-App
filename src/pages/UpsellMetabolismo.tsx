@@ -35,7 +35,7 @@ useEffect(() => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-gray-900 flex items-center justify-center px-4 py-12">
-      <div className="max-w-2xl w-full bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-12 text-center space-y-6 border border-gray-200 dark:border-gray-800">
+      <div className="max-w-2xl w-full bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-12 text-center space-y-6 border border-gray-200 dark:border-gray-800">
         <div className="flex justify-center items-center gap-2 text-red-600 text-sm font-semibold uppercase tracking-wide">
           <Flame className="w-5 h-5" />
           Oferta Secreta Exclusiva
@@ -92,7 +92,7 @@ useEffect(() => {
         </div>
 
         {/* Depoimentos */}
-        <div className="bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-4 text-sm text-gray-700 dark:text-gray-300">
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 text-left space-y-4 text-sm text-gray-700 dark:text-gray-300">
           <div className="flex items-center gap-2">
             <UserCircle2 className="w-6 h-6 text-gray-400" />
             <div>
