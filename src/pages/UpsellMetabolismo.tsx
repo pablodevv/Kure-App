@@ -101,21 +101,24 @@ export default function UpsellMetabolismo() {
           </div>
         </div>
 
-        <button
-          className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
-        >
-          SIM! Quero ativar meu metabolismo agora 🔥
-        </button>
+        <Button
+  ref={buttonRef}
+  className="kirvano-payment-trigger w-full bg-red-500 hover:bg-red-600 text-white text-sm md:text-lg font-semibold py-4 rounded-xl shadow-xl transition-all"
+>
+  SIM! Quero ativar meu metabolismo agora 🔥
+</Button>
+
 
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
           Essa pequena decisão pode transformar seus resultados nos próximos dias.
         </p>
 
         <button
-          className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
-        >
-          Não quero acelerar meus resultados agora
-        </button>
+  className="kirvano-refuse-trigger text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 underline mt-2"
+>
+  Não quero acelerar meus resultados agora
+</button>
+
 
         <div className="text-xs text-gray-400 pt-6">
           Garantia incondicional de reembolso em 7 dias. Sem riscos.
