@@ -21,7 +21,7 @@ export default function UpsellMenteBlindada() {
   }
 
   const handleAccept = () => {
-    window.location.href = "https://kuremente.com" // substitua pelo seu link real
+    window.location.href = "https://pay.kirvano.com/3ecc476b-077e-4c6c-8fcd-3528821e2dc6" // substitua pelo seu link real
   }
 
   const handleDecline = () => {
