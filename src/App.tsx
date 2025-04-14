@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Summary from './pages/Summary';
@@ -12,6 +15,13 @@ import Obrigado from './pages/Obrigado';
 import UpsellFinal from './pages/UpsellFinal';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Rola a página para o topo sempre que a URL mudar
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <Router>
       <Routes>
@@ -30,9 +40,5 @@ function App() {
     </Router>
   );
 }
-
-
-
-
 
 export default App;
