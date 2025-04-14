@@ -12,27 +12,22 @@ export default function UpsellMetabolismo() {
   }, [])
 
   useEffect(() => {
-    // Remove scripts antigos
-    document.querySelectorAll('script[src="https://snippets.kirvano.com/upsell.min.js"]').forEach((el) => el.remove())
+    const existingScript = document.querySelector(
+      'script[src="https://snippets.kirvano.com/upsell.min.js"]'
+    )
+    if (!existingScript) {
+      const kirvanoVars = document.createElement("script")
+      kirvanoVars.innerHTML = `
+        var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
+        var nextPageURL = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba";
+        var refusePageURL = "https://kure-app.netlify.app/upsell2";
+      `
+      document.body.appendChild(kirvanoVars)
 
-    // Adiciona o script novo da Kirvano
-    const scriptVars = document.createElement("script")
-    scriptVars.innerHTML = `
-      var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
-      var nextPageURL = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba";
-      var refusePageURL = "https://kure-app.netlify.app/upsell2";
-    `
-
-    const scriptKirvano = document.createElement("script")
-    scriptKirvano.src = "https://snippets.kirvano.com/upsell.min.js"
-    scriptKirvano.async = true
-
-    document.body.appendChild(scriptVars)
-    document.body.appendChild(scriptKirvano)
-
-    return () => {
-      scriptVars.remove()
-      scriptKirvano.remove()
+      const kirvanoScript = document.createElement("script")
+      kirvanoScript.src = "https://snippets.kirvano.com/upsell.min.js"
+      kirvanoScript.async = true
+      document.body.appendChild(kirvanoScript)
     }
   }, [])
 
