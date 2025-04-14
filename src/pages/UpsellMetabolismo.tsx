@@ -4,6 +4,7 @@ import { CheckCircle, Flame, TimerReset, UserCircle2 } from "lucide-react"
 export default function UpsellMetabolismo() {
   const [timeLeft, setTimeLeft] = useState(600)
 
+  // Contador regressivo
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0))
@@ -11,25 +12,24 @@ export default function UpsellMetabolismo() {
     return () => clearInterval(interval)
   }, [])
 
+  // Carregando os scripts da Kirvano de forma correta
   useEffect(() => {
-    // Cria e injeta o script de variáveis da Kirvano
     const scriptVars = document.createElement("script")
     scriptVars.innerHTML = `
       var offer = "2787a72a-d37c-4218-8d18-93134844e5ba";
       var nextPageURL = "https://pay.kirvano.com/2787a72a-d37c-4218-8d18-93134844e5ba";
       var refusePageURL = "https://kure-app.netlify.app/upsell2";
     `
+    document.body.appendChild(scriptVars)
 
-    // Cria o script principal da Kirvano
     const scriptMain = document.createElement("script")
     scriptMain.src = "https://snippets.kirvano.com/upsell.min.js"
     scriptMain.async = true
-
-    // Adiciona os scripts ao body
-    document.body.appendChild(scriptVars)
+    scriptMain.onload = () => {
+      console.log("Script Kirvano carregado e pronto para funcionar!")
+    }
     document.body.appendChild(scriptMain)
 
-    // Limpeza ao desmontar
     return () => {
       document.body.removeChild(scriptVars)
       document.body.removeChild(scriptMain)
