@@ -29,7 +29,7 @@ const plans: Plan[] = [
     originalPrice: 19.18,
     pricePerDay: 1.37,
     originalPricePerDay: 2.74,
-    link: 'https://pay.kirvano.com/35c5a14e-f869-4b0d-9824-002508079a15', 
+    link: 'https://app.pushinpay.com.br/service/pay/9EBF0B54-8189-4C0A-BB59-065DA2B5DA88', 
   },
   {
     id: '1-month',
@@ -39,7 +39,7 @@ const plans: Plan[] = [
     pricePerDay: 0.64,
     originalPricePerDay: 1.28,
     popular: true,
-    link: 'https://pay.kirvano.com/93aaaedf-ccb1-4145-a817-3331514ce1de', 
+    link: 'https://app.pushinpay.com.br/service/pay/9EBF0993-C1F6-4F21-A6F3-F1ED04800BF8', 
   },
   {
     id: '3-month',
@@ -49,7 +49,7 @@ const plans: Plan[] = [
     pricePerDay: 0.31,
     originalPricePerDay: 0.63,
     hasGift: true,
-    link: 'https://pay.kirvano.com/3c4842c4-4e3a-46cd-b66c-8f0b6e01ac10', 
+    link: 'https://app.pushinpay.com.br/service/pay/9EBF06C5-AD8F-447D-9F42-911C349AA2C6', 
   },
 ];
 
