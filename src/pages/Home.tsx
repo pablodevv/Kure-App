@@ -43,7 +43,7 @@ export default function Home() {
 
         <div className="flex flex-col items-center text-center gap-8">
           <img
-            src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffacebook-hero-image.00bd0e16.png&w=1920&q=75"
+            src="https://kureapp.health/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhome_hero_image_mobile.303035ac.png&w=1920&q=75"
             alt="Brain with headphones"
             className="w-50 h-50 object-cover mb-8" style={{ marginBottom: '0' }}
           />
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
 
           <p className="text-gray-400 mb-8" style={{ marginBottom: '0', color: 'white' }}>
-            Com base em entrevistas com usuários, 98% estão satisfeitos
+            Taxa de satisfação de 98% *com base em entrevistas com usuários
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" style={{ marginTop: '0' }}>
