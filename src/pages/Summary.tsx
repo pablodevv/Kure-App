@@ -76,7 +76,7 @@ export default function Summary() {
 
   return (
     <div className="min-h-screen bg-[#0A061E] text-white">
-      {/* Header */}
+      {}
       <header className="w-full py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex justify-start items-center">
           <div className="flex items-center gap-2">
@@ -86,14 +86,14 @@ export default function Summary() {
         </div>
       </header>
 
-      {/* Hero Section */}
+      {}
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          {/* Mobile First: Prediction Section */}
+          {}
           <div className="lg:hidden bg-[#1A1632] rounded-2xl p-6">
             <h3 className="text-xl font-semibold mb-4" style={{ textAlign: 'center' }}>Sua previsão de perda de peso com o Kure</h3>
             <div className="h-[300px]">
@@ -153,7 +153,7 @@ export default function Summary() {
             </button>
           </div>
 
-          {/* Desktop Prediction Section */}
+          {}
           <div className="hidden lg:block bg-[#1A1632] rounded-2xl p-6">
             <h3 className="text-xl font-semibold mb-4">Sua previsão de perda de peso com o Kure</h3>
             <div className="h-[300px]">
@@ -199,7 +199,7 @@ export default function Summary() {
         
       </div>
 
-      {/* Weekly Plan Section */}
+      {}
       <div className="bg-[#1A1632] py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-6">
@@ -218,7 +218,7 @@ export default function Summary() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Weekly Timeline */}
+            {}
             <div className="space-y-8">
               {weeklyPlan.map((week, index) => (
                 <div key={week.week} className="flex items-start gap-4">
@@ -241,7 +241,7 @@ export default function Summary() {
               ))}
             </div>
 
-            {/* Results Preview */}
+            {}
            
 <div className="space-y-8">
   <div className="bg-[#0A061E] p-6 rounded-xl">
@@ -272,7 +272,7 @@ export default function Summary() {
         </div>
       </div>
 
-      {/* Expert Section */}
+      {}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -315,7 +315,7 @@ export default function Summary() {
         </div>
       </div>
 
-      {/* Testimonials Section */}
+      {}
       <div className="bg-[#1A1632] py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
